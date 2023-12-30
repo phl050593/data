@@ -2,12 +2,12 @@
 
 int main() {
     game_data game;
-
-    if (initialize_all(&game, 5) != 0) {
+    plane_data plane;
+    if (initialize_all(&game, &plane , 5) != 0) {
         return -1;
     }
 
-    Gamebackground_call(&game);
+    Gamebackground_call(&game,&plane);
 
     cleanup(&game);
 

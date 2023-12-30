@@ -33,14 +33,21 @@ void update_enemy_positions(game_data* game) {
 }
 
 void fire_bullet(enemy_data* enemy) {
-    // 停止并重新播放射击音效，使用第二个音频混合组件
+
     al_stop_samples();
 
     if (enemy->num_bullets < MAX_BULLETS) {
         initialize_bullet(enemy, enemy->num_bullets);
         enemy->num_bullets++;
-
-        // 重新播放音效，使用第二个音频混合组件
         al_play_sample(enemy->shoot_sound, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
     }
+}
+
+void movePlane(plane_data* plane, const ALLEGRO_KEYBOARD_EVENT* kbEvent) {
+    if (kbEvent->keycode == ALLEGRO_KEY_LEFT && plane->x > PLANE_MIN) {
+        plane->x -= PLANE_MOVE;
+    } else if (kbEvent->keycode == ALLEGRO_KEY_RIGHT && plane->x < PLANE_MAX) {
+        plane->x += PLANE_MOVE;
+    }
+
 }

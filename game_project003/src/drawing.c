@@ -1,6 +1,15 @@
 #include "myheader.h"
 
-void draw_game(game_data* game) {
+void draw_game(game_data* game, plane_data* plane) {
+
+    draw_background(game);
+    draw_enemies(game);
+    draw_plane(plane);
+    al_flip_display();
+}
+
+void draw_background(game_data* game)
+{
     al_clear_to_color(al_map_rgb(0, 0, 0));
 
     int img_w = al_get_bitmap_width(game->background);
@@ -9,10 +18,6 @@ void draw_game(game_data* game) {
     al_draw_scaled_bitmap(
         game->background, 0, 0, img_w, img_h, 0, 0, SCREEN_W, SCREEN_H, 0
     );
-
-    draw_enemies(game);
-
-    al_flip_display();
 }
 
 void draw_enemies(game_data* game) {
@@ -39,4 +44,9 @@ void draw_enemies(game_data* game) {
             );
         }
     }
+}
+
+void draw_plane(plane_data* plane)
+{
+    al_draw_bitmap(plane->plane_img, plane->x, plane->y, 0);
 }
