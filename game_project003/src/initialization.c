@@ -64,7 +64,8 @@ int initialize_enemies(enemy_data* enemies, int num_enemies, ALLEGRO_DISPLAY* di
     for (int i = 0; i < num_enemies; ++i) {
         enemies[i].enemy_display = display;
         enemies[i].enemy_pic = al_load_bitmap("./enemy.png");
-
+        enemies[i].hit_count = 0;
+        
         if (!enemies[i].enemy_pic) {
             return -1;
         }
@@ -155,7 +156,7 @@ int initialize_plane(plane_data* plane) {
     plane->plane_timer = al_create_timer(1.0 / 60);
     plane->event_plane_queue = al_create_event_queue(); 
     plane->event_plane_bullet_queue = al_create_event_queue(); 
-    plane->plane_bullet_timer = al_create_timer(PLANE_BULLET_UPDATE_TIMER);  // 請根據需要調整計時器間隔
+    plane->plane_bullet_timer = al_create_timer(PLANE_BULLET_UPDATE_TIMER); 
     al_register_event_source(plane->event_plane_queue, al_get_timer_event_source(plane->plane_timer));
     al_register_event_source(plane->event_plane_queue, al_get_keyboard_event_source());
     al_start_timer(plane->plane_timer);

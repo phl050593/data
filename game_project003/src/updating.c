@@ -29,6 +29,7 @@ void update_enemy_positions(game_data* game, plane_data* plane) {
                 game->enemies[i].num_bullets--;
             }
         }
+
     }
     check_and_remove_bullet_collision(game, plane);
 }
