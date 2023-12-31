@@ -8,7 +8,7 @@ int main() {
     }
 
     Gamebackground_call(&game,&plane);
-
+        
     cleanup(&game);
     cleanup_enemies(&game);
     cleanup_plane(&plane);

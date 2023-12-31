@@ -15,12 +15,12 @@
 
 #define BALL_SIZE 40
 #define PLANE_MOVE 5
-#define PLANE_MIN 30
-#define PLANE_MAX 580
+#define PLANE_MIN 0
+#define PLANE_MAX 700
 #define PLANE_SIZE 40
 
 #define MAX_PLANE_BULLETS 1
-#define PLANE_BULLET_UPDATE_TIMER 0.5
+#define PLANE_BULLET_UPDATE_TIMER 0.005
 
 typedef struct enemy_bullet_data {
     float x;
@@ -50,7 +50,7 @@ typedef struct plane_data {
     ALLEGRO_TIMER* plane_bullet_timer;
     ALLEGRO_EVENT_QUEUE* event_plane_queue;
     ALLEGRO_EVENT_QUEUE* event_plane_bullet_queue;
-    plane_bullet bullets[MAX_BULLETS];
+    plane_bullet bullets[MAX_PLANE_BULLETS];
     int num_bullets;
     int width;
     int height;

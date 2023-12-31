@@ -36,7 +36,7 @@ void update_enemy_positions(game_data* game) {
 void movePlane(plane_data* plane, const ALLEGRO_KEYBOARD_EVENT* kbEvent) {
     if (kbEvent->keycode == ALLEGRO_KEY_LEFT && plane->x > PLANE_MIN) {
         plane->x -= PLANE_MOVE;
-    } else if (kbEvent->keycode == ALLEGRO_KEY_RIGHT && plane->x < PLANE_MAX) {
+    } else if (kbEvent->keycode == ALLEGRO_KEY_RIGHT && plane->x < PLANE_MAX-PLANE_SIZE) {
         plane->x += PLANE_MOVE;
     }
 
@@ -56,7 +56,7 @@ void fire_bullet(enemy_data* enemy) {
 
 void fire_plane_bullet(plane_data* plane) {
     ALLEGRO_EVENT ev;
-    al_wait_for_event(plane->event_plane_queue, &ev);
+    al_wait_for_event(plane->event_plane_bullet_queue, &ev);
 
     for (int j = 0; j < plane->num_bullets; ++j) {
         plane->bullets[j].y += plane->bullets[j].vy;
@@ -65,11 +65,12 @@ void fire_plane_bullet(plane_data* plane) {
             al_destroy_bitmap(plane->bullets[j].bullet);
             plane->bullets[j] = plane->bullets[plane->num_bullets - 1];
             plane->num_bullets--;
+            
         }
     }
     if (ev.type == ALLEGRO_EVENT_TIMER && ev.timer.source == plane->plane_bullet_timer)
     {
-        if (plane->num_bullets < MAX_BULLETS) {
+        if (plane->num_bullets < MAX_PLANE_BULLETS) {
             initialize_plane_bullet(plane, plane->num_bullets);
             plane->num_bullets++;
 

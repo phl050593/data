@@ -115,7 +115,7 @@ void initialize_plane_bullet(plane_data* plane, int index)
     plane->bullets[index].bullet = al_load_bitmap("./plane_bullet.png");
     plane->bullets[index].x = plane->x + plane->width / 2;
     plane->bullets[index].y = plane->y + plane->height;
-    plane->bullets[index].vy = -5.0;
+    plane->bullets[index].vy = -20.0;
     plane->bullets[index].width = 40;
     plane->bullets[index].height = 40;
     
@@ -129,8 +129,9 @@ void Gamebackground_call(game_data* game, plane_data* plane)
     {   
     
         update_enemy_positions(game);
-        fire_plane_bullet(plane);
         draw_game(game, plane);
+        fire_plane_bullet(plane);
+       
 
 
 
@@ -167,7 +168,7 @@ int initialize_plane(plane_data* plane) {
     al_register_event_source(plane->event_plane_queue, al_get_timer_event_source(plane->plane_timer));
     al_register_event_source(plane->event_plane_queue, al_get_keyboard_event_source());
     al_start_timer(plane->plane_timer);
-    al_register_event_source(plane->event_plane_queue, al_get_timer_event_source(plane->plane_bullet_timer));
+    al_register_event_source(plane->event_plane_bullet_queue, al_get_timer_event_source(plane->plane_bullet_timer));
     al_start_timer(plane->plane_bullet_timer);
     
     return 0;
