@@ -3,7 +3,7 @@
 int main() {
     game_data game;
     plane_data plane;
-    if (initialize_all(&game, &plane , 5) != 0) {
+    if (initialize_all(&game, &plane , 3) != 0) {
         return -1;
     }
 

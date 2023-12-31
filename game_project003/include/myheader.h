@@ -11,7 +11,7 @@
 #define SCREEN_H 860
 #define MAX_ENEMIES 10
 #define MAX_BULLETS 50
-#define BULLET_UPDATE_TIMER 0.5
+#define BULLET_UPDATE_TIMER 0.05
 
 #define BALL_SIZE 40
 #define PLANE_MOVE 5
@@ -19,7 +19,7 @@
 #define PLANE_MAX 700
 #define PLANE_SIZE 40
 
-#define MAX_PLANE_BULLETS 1
+#define MAX_PLANE_BULLETS 100
 #define PLANE_BULLET_UPDATE_TIMER 0.005
 
 typedef struct enemy_bullet_data {
@@ -94,7 +94,7 @@ void cleanup(game_data* game);
 void cleanup_enemies(game_data* game);
 void cleanup_plane(plane_data*plane);
 
-void update_enemy_positions(game_data* game);
+void update_enemy_positions(game_data* game, plane_data* plane);
 void fire_bullet(enemy_data* enemy);
 void fire_plane_bullet(plane_data* plane);
 
@@ -107,6 +107,11 @@ int initialize_plane(plane_data* plane);
 
 
 void movePlane(plane_data* plane, const ALLEGRO_KEYBOARD_EVENT* kbEvent);
+
+
+int check_collision(float x1, float y1, int w1, int h1, float x2, float y2, int w2, int h2);
+// 在头文件中添加这个函数原型
+void check_and_remove_bullet_collision(game_data* game, plane_data* plane);
 
 
 #endif // _MYHEADER_H_

@@ -1,6 +1,6 @@
 #include "myheader.h"
 
-void update_enemy_positions(game_data* game) {
+void update_enemy_positions(game_data* game, plane_data* plane) {
     for (int i = 0; i < game->num_enemies; ++i) {
         game->enemies[i].x += game->enemies[i].vx;
         game->enemies[i].y += game->enemies[i].vy;
@@ -30,6 +30,7 @@ void update_enemy_positions(game_data* game) {
             }
         }
     }
+    check_and_remove_bullet_collision(game, plane);
 }
 
 
@@ -74,6 +75,48 @@ void fire_plane_bullet(plane_data* plane) {
             initialize_plane_bullet(plane, plane->num_bullets);
             plane->num_bullets++;
 
+        }
+    }
+}
+
+
+int check_collision(float x1, float y1, int w1, int h1, float x2, float y2, int w2, int h2) {
+    return x1 < x2 + w2 &&
+           x1 + w1 > x2 &&
+           y1 < y2 + h2 &&
+           y1 + h1 > y2;
+}
+
+
+void check_and_remove_bullet_collision(game_data* game, plane_data* plane) {
+    // 检查敌人子弹与飞机的碰撞
+    for (int i = 0; i < game->num_enemies; ++i) {
+        for (int j = 0; j < game->enemies[i].num_bullets; ++j) {
+            if (check_collision(game->enemies[i].bullets[j].x, game->enemies[i].bullets[j].y,
+                                 game->enemies[i].bullets[j].width, game->enemies[i].bullets[j].height,
+                                 plane->x+20, plane->y, plane->width, plane->height)) {
+                al_destroy_bitmap(game->enemies[i].bullets[j].bullet_pic);
+                game->enemies[i].bullets[j] = game->enemies[i].bullets[game->enemies[i].num_bullets - 1];
+                game->enemies[i].num_bullets--;
+
+                // TODO: 处理飞机子弹与敌人的碰撞
+            }
+        }
+    }
+
+    // 检查飞机子弹与敌人的碰撞
+    for (int i = 0; i < plane->num_bullets; ++i) {
+        for (int j = 0; j < game->num_enemies; ++j) {
+            if (check_collision(plane->bullets[i].x, plane->bullets[i].y,
+                                 plane->bullets[i].width, plane->bullets[i].height,
+                                 game->enemies[j].x, game->enemies[j].y,
+                                 game->enemies[j].width, game->enemies[j].height)) {
+                al_destroy_bitmap(plane->bullets[i].bullet);
+                plane->bullets[i] = plane->bullets[plane->num_bullets - 1];
+                plane->num_bullets--;
+
+                // TODO: 处理敌人子弹与飞机的碰撞
+            }
         }
     }
 }

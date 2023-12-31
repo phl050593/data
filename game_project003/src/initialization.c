@@ -127,7 +127,7 @@ void Gamebackground_call(game_data* game, plane_data* plane) {
     al_play_sample_instance(game->background_music_instance);
 
     while (1) {
-        update_enemy_positions(game);
+        update_enemy_positions(game, plane);
         draw_game(game, plane);
         fire_plane_bullet(plane);
 
