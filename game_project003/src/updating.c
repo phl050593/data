@@ -89,7 +89,7 @@ int check_collision(float x1, float y1, int w1, int h1, float x2, float y2, int 
 
 
 void check_and_remove_bullet_collision(game_data* game, plane_data* plane) {
-    // 检查敌人子弹与飞机的碰撞
+    
     for (int i = 0; i < game->num_enemies; ++i) {
         for (int j = 0; j < game->enemies[i].num_bullets; ++j) {
             if (check_collision(game->enemies[i].bullets[j].x, game->enemies[i].bullets[j].y,
@@ -99,12 +99,11 @@ void check_and_remove_bullet_collision(game_data* game, plane_data* plane) {
                 game->enemies[i].bullets[j] = game->enemies[i].bullets[game->enemies[i].num_bullets - 1];
                 game->enemies[i].num_bullets--;
 
-                // TODO: 处理飞机子弹与敌人的碰撞
+                
             }
         }
     }
 
-    // 检查飞机子弹与敌人的碰撞
     for (int i = 0; i < plane->num_bullets; ++i) {
         for (int j = 0; j < game->num_enemies; ++j) {
             if (check_collision(plane->bullets[i].x, plane->bullets[i].y,
@@ -115,7 +114,7 @@ void check_and_remove_bullet_collision(game_data* game, plane_data* plane) {
                 plane->bullets[i] = plane->bullets[plane->num_bullets - 1];
                 plane->num_bullets--;
 
-                // TODO: 处理敌人子弹与飞机的碰撞
+             
             }
         }
     }
