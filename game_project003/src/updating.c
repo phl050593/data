@@ -32,16 +32,6 @@ void update_enemy_positions(game_data* game) {
     }
 }
 
-void fire_bullet(enemy_data* enemy) {
-
-    al_stop_samples();
-
-    if (enemy->num_bullets < MAX_BULLETS) {
-        initialize_bullet(enemy, enemy->num_bullets);
-        enemy->num_bullets++;
-        al_play_sample(enemy->shoot_sound, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
-    }
-}
 
 void movePlane(plane_data* plane, const ALLEGRO_KEYBOARD_EVENT* kbEvent) {
     if (kbEvent->keycode == ALLEGRO_KEY_LEFT && plane->x > PLANE_MIN) {
@@ -50,4 +40,39 @@ void movePlane(plane_data* plane, const ALLEGRO_KEYBOARD_EVENT* kbEvent) {
         plane->x += PLANE_MOVE;
     }
 
+
+}
+
+void fire_bullet(enemy_data* enemy) {
+    al_stop_samples();
+
+    if (enemy->num_bullets < MAX_BULLETS) {
+        initialize_bullet(enemy, enemy->num_bullets);
+        
+        enemy->num_bullets++;
+        al_play_sample(enemy->shoot_sound, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
+    }
+}
+
+void fire_plane_bullet(plane_data* plane) {
+    ALLEGRO_EVENT ev;
+    al_wait_for_event(plane->event_plane_queue, &ev);
+
+    for (int j = 0; j < plane->num_bullets; ++j) {
+        plane->bullets[j].y += plane->bullets[j].vy;
+
+        if (plane->bullets[j].y < 0) {
+            al_destroy_bitmap(plane->bullets[j].bullet);
+            plane->bullets[j] = plane->bullets[plane->num_bullets - 1];
+            plane->num_bullets--;
+        }
+    }
+    if (ev.type == ALLEGRO_EVENT_TIMER && ev.timer.source == plane->plane_bullet_timer)
+    {
+        if (plane->num_bullets < MAX_BULLETS) {
+            initialize_plane_bullet(plane, plane->num_bullets);
+            plane->num_bullets++;
+
+        }
+    }
 }

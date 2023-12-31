@@ -49,4 +49,19 @@ void draw_enemies(game_data* game) {
 void draw_plane(plane_data* plane)
 {
     al_draw_bitmap(plane->plane_img, plane->x, plane->y, 0);
+
+    for (int j = 0; j < plane->num_bullets; ++j) 
+        {
+            al_draw_scaled_bitmap(
+                plane->bullets[j].bullet,
+                0, 0,
+                al_get_bitmap_width(plane->bullets[j].bullet),
+                al_get_bitmap_height(plane->bullets[j].bullet),
+                plane->bullets[j].x,
+                plane->bullets[j].y,
+                plane->bullets[j].width,
+                plane->bullets[j].height,
+                0
+            );
+        }
 }

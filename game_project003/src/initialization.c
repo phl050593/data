@@ -107,7 +107,18 @@ void initialize_bullet(enemy_data* enemy, int index) {
     enemy->bullets[index].vy = 5.0;
     enemy->bullets[index].width = 40;
     enemy->bullets[index].height = 40;
- 
+    
+}
+
+void initialize_plane_bullet(plane_data* plane, int index)
+{
+    plane->bullets[index].bullet = al_load_bitmap("./plane_bullet.png");
+    plane->bullets[index].x = plane->x + plane->width / 2;
+    plane->bullets[index].y = plane->y + plane->height;
+    plane->bullets[index].vy = -5.0;
+    plane->bullets[index].width = 40;
+    plane->bullets[index].height = 40;
+    
 }
 
 void Gamebackground_call(game_data* game, plane_data* plane) 
@@ -118,6 +129,7 @@ void Gamebackground_call(game_data* game, plane_data* plane)
     {   
     
         update_enemy_positions(game);
+        fire_plane_bullet(plane);
         draw_game(game, plane);
 
 
@@ -149,10 +161,14 @@ int initialize_plane(plane_data* plane) {
     plane->y = SCREEN_H - PLANE_SIZE - 10;
     plane->plane_img = al_load_bitmap("./ball.bmp");
     plane->plane_timer = al_create_timer(1.0 / 60);
-    plane->event_plane_queue = al_create_event_queue();  // 加入這一行
+    plane->event_plane_queue = al_create_event_queue(); 
+    plane->event_plane_bullet_queue = al_create_event_queue(); 
+    plane->plane_bullet_timer = al_create_timer(PLANE_BULLET_UPDATE_TIMER);  // 請根據需要調整計時器間隔
     al_register_event_source(plane->event_plane_queue, al_get_timer_event_source(plane->plane_timer));
     al_register_event_source(plane->event_plane_queue, al_get_keyboard_event_source());
     al_start_timer(plane->plane_timer);
-   
+    al_register_event_source(plane->event_plane_queue, al_get_timer_event_source(plane->plane_bullet_timer));
+    al_start_timer(plane->plane_bullet_timer);
+    
     return 0;
 }

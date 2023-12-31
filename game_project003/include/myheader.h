@@ -19,6 +19,8 @@
 #define PLANE_MAX 580
 #define PLANE_SIZE 40
 
+#define MAX_PLANE_BULLETS 1
+#define PLANE_BULLET_UPDATE_TIMER 0.5
 
 typedef struct enemy_bullet_data {
     float x;
@@ -29,13 +31,29 @@ typedef struct enemy_bullet_data {
     int height;
 } enemy_bullet;
 
+typedef struct plane_bullet_data {
+    float x;
+    float y;
+    float vy;
+    ALLEGRO_BITMAP* bullet;
+    int width;
+    int height;
+ 
+} plane_bullet;
+
 typedef struct plane_data {
-    int x;
-    int y;
+    float x;
+    float y;
     ALLEGRO_BITMAP* plane_img;
     ALLEGRO_DISPLAY* plane_display;
     ALLEGRO_TIMER* plane_timer;
+    ALLEGRO_TIMER* plane_bullet_timer;
     ALLEGRO_EVENT_QUEUE* event_plane_queue;
+    ALLEGRO_EVENT_QUEUE* event_plane_bullet_queue;
+    plane_bullet bullets[MAX_BULLETS];
+    int num_bullets;
+    int width;
+    int height;
 } plane_data;
 
 typedef struct enemy_data {
@@ -74,14 +92,17 @@ void draw_plane(plane_data* plane);
 
 void cleanup(game_data* game);
 void cleanup_enemies(game_data* game);
+void cleanup_plane(plane_data*plane);
 
 void update_enemy_positions(game_data* game);
 void fire_bullet(enemy_data* enemy);
+void fire_plane_bullet(plane_data* plane);
 
 int initialize_all(game_data* game,plane_data* plane, int num_enemies);
 int initialize_game(game_data* game, int num_enemies);
 int initialize_enemies(enemy_data* enemies, int num_enemies, ALLEGRO_DISPLAY* display, ALLEGRO_EVENT_QUEUE* event_queue);
 void initialize_bullet(enemy_data* enemy, int index);
+void initialize_plane_bullet(plane_data* enemy, int index);
 int initialize_plane(plane_data* plane);
 
 

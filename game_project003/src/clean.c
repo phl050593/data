@@ -27,4 +27,9 @@ void cleanup_plane(plane_data*plane){
     al_destroy_display(plane->plane_display);
     al_destroy_event_queue(plane->event_plane_queue);
     al_destroy_timer(plane->plane_timer);
+    for (int j = 0; j < plane->num_bullets; ++j) {
+        al_destroy_bitmap(plane->bullets[j].bullet);
+    }
+     al_destroy_timer(plane->plane_bullet_timer);
+
 }
