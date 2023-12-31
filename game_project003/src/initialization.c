@@ -121,38 +121,29 @@ void initialize_plane_bullet(plane_data* plane, int index)
     
 }
 
-void Gamebackground_call(game_data* game, plane_data* plane) 
-{
+#include "myheader.h"
+
+void Gamebackground_call(game_data* game, plane_data* plane) {
     al_play_sample_instance(game->background_music_instance);
 
-    while (1) 
-    {   
-    
+    while (1) {
         update_enemy_positions(game);
         draw_game(game, plane);
         fire_plane_bullet(plane);
-       
-
-
 
         ALLEGRO_EVENT ev;
         ALLEGRO_EVENT plane_ev;
+
         al_wait_for_event(game->event_queue, &ev);
         al_wait_for_event(plane->event_plane_queue, &plane_ev);
-        if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE) 
-        {
-            break;
-        } 
-        if (plane_ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE) 
-        {
-            break;
-        } 
-        else if (plane_ev.type == ALLEGRO_EVENT_KEY_DOWN || plane_ev.type == ALLEGRO_EVENT_KEY_UP) 
-        {
+
+        if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE || (plane_ev.type == ALLEGRO_EVENT_KEY_DOWN && plane_ev.keyboard.keycode == ALLEGRO_KEY_ESCAPE)) {
+            break; 
+        } else if (plane_ev.type == ALLEGRO_EVENT_KEY_DOWN || plane_ev.type == ALLEGRO_EVENT_KEY_UP) {
             movePlane(plane, &plane_ev.keyboard);
         }
     }
-    
+
     cleanup_enemies(game);
 }
 
@@ -173,3 +164,4 @@ int initialize_plane(plane_data* plane) {
     
     return 0;
 }
+ 
