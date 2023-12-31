@@ -32,6 +32,7 @@ void update_enemy_positions(game_data* game, plane_data* plane) {
 
     }
     check_and_remove_bullet_collision(game, plane);
+    
 }
 
 
@@ -114,9 +115,24 @@ void check_and_remove_bullet_collision(game_data* game, plane_data* plane) {
                 al_destroy_bitmap(plane->bullets[i].bullet);
                 plane->bullets[i] = plane->bullets[plane->num_bullets - 1];
                 plane->num_bullets--;
-
-             
+               game->enemies[j].destroy_enemy ++;
+               
             }
+        }
+    }
+   
+     for (int i = 0; i < game->num_enemies; ++i) {
+       
+        if (game->enemies[i].destroy_enemy>=3) {
+            // Other destruction code for enemy resources
+
+            // Remove destroyed enemy
+            game->enemies[i] = game->enemies[game->num_enemies - 1];
+           
+          game->num_enemies--;
+
+        
+
         }
     }
 }

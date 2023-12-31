@@ -1,7 +1,5 @@
 {
     "files.associations": {
-        "myheader.h": "c",
-        "allegro_image.h": "c",
-        "allegro.h": "c"
+        "myheader.h": "c"
     }
 }

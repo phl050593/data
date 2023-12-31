@@ -88,8 +88,8 @@ int initialize_enemies(enemy_data* enemies, int num_enemies, ALLEGRO_DISPLAY* di
         al_register_event_source(enemies[i].event_enemy_queue, al_get_timer_event_source(enemies[i].bullet_timer));
         al_start_timer(enemies[i].bullet_timer);
 
-        enemies[i].width = 80;
-        enemies[i].height = 80;
+        enemies[i].width = 70;
+        enemies[i].height = 70;
 
         enemies[i].x = rand() % (SCREEN_W - enemies[i].width);
         enemies[i].y = rand() % (SCREEN_H / 3 - enemies[i].height);

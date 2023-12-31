@@ -9,17 +9,17 @@
 
 #define SCREEN_W 700
 #define SCREEN_H 860
-#define MAX_ENEMIES 10
+#define MAX_ENEMIES 100
 #define MAX_BULLETS 50
-#define BULLET_UPDATE_TIMER 0.5
+#define BULLET_UPDATE_TIMER 0.005
 
 #define BALL_SIZE 40
-#define PLANE_MOVE 5
+#define PLANE_MOVE 15
 #define PLANE_MIN 0
 #define PLANE_MAX 700
 #define PLANE_SIZE 40
 
-#define MAX_PLANE_BULLETS 100
+#define MAX_PLANE_BULLETS 1
 #define PLANE_BULLET_UPDATE_TIMER 0.005
 
 typedef struct enemy_bullet_data {
@@ -54,6 +54,7 @@ typedef struct plane_data {
     int num_bullets;
     int width;
     int height;
+    
 } plane_data;
 
 typedef struct enemy_data {
@@ -72,6 +73,8 @@ typedef struct enemy_data {
     enemy_bullet bullets[MAX_BULLETS];
     int num_bullets;
     int hit_count;
+    int destroy_enemy;
+    
 } enemy_data;
 
 typedef struct game_data {
@@ -82,6 +85,7 @@ typedef struct game_data {
     int num_enemies;
     ALLEGRO_SAMPLE* background_music;
     ALLEGRO_SAMPLE_INSTANCE* background_music_instance;
+    
 } game_data;
 
 
