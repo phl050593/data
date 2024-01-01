@@ -150,6 +150,7 @@ void Gamebackground_call(game_data* game, plane_data* plane) {
 
 
 int initialize_plane(plane_data* plane) {
+    plane->health = 5;
     plane->x = SCREEN_W / 2;
     plane->y = SCREEN_H - PLANE_SIZE - 10;
     plane->plane_img = al_load_bitmap("./ball.bmp");

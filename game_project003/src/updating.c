@@ -100,6 +100,8 @@ void check_and_remove_bullet_collision(game_data* game, plane_data* plane) {
                 al_destroy_bitmap(game->enemies[i].bullets[j].bullet_pic);
                 game->enemies[i].bullets[j] = game->enemies[i].bullets[game->enemies[i].num_bullets - 1];
                 game->enemies[i].num_bullets--;
+                plane->health--;
+                
 
                 
             }
@@ -115,13 +117,13 @@ void check_and_remove_bullet_collision(game_data* game, plane_data* plane) {
                 al_destroy_bitmap(plane->bullets[i].bullet);
                 plane->bullets[i] = plane->bullets[plane->num_bullets - 1];
                 plane->num_bullets--;
-               game->enemies[j].destroy_enemy ++;
+                game->enemies[j].destroy_enemy ++;
                
             }
         }
     }
    
-     for (int i = 0; i < game->num_enemies; ++i) {
+    for (int i = 0; i < game->num_enemies; ++i) {
        
         if (game->enemies[i].destroy_enemy>=3) {
             // Other destruction code for enemy resources
@@ -129,10 +131,31 @@ void check_and_remove_bullet_collision(game_data* game, plane_data* plane) {
             // Remove destroyed enemy
             game->enemies[i] = game->enemies[game->num_enemies - 1];
            
-          game->num_enemies--;
+            game->num_enemies--;
 
         
 
         }
+
+
     }
+
+
+    if(game->num_enemies == 0){
+        printf("You WIN\n");
+        cleanup(game);
+        cleanup_enemies(game);
+        cleanup_plane(plane);
+        
+    }
+
+    if (plane->health == 0 ){
+        printf("You LOSE\n");
+        cleanup(game);
+        cleanup_enemies(game);
+        cleanup_plane(plane);
+        
+    }
+
+   
 }

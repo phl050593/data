@@ -54,6 +54,7 @@ typedef struct plane_data {
     int num_bullets;
     int width;
     int height;
+    int health;
     
 } plane_data;
 
