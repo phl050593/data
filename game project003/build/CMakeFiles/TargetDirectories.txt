@@ -1,3 +1,0 @@
-C:/game_projectmenu/build/CMakeFiles/YourProgram.dir
-C:/game_projectmenu/build/CMakeFiles/edit_cache.dir
-C:/game_projectmenu/build/CMakeFiles/rebuild_cache.dir
