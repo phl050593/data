@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "YourProgram::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-YourProgram-Debug-bd76e202eb5edd3f0211.json",
+					"jsonFile" : "target-YourProgram-Debug-4ffa51640bde12e0c41f.json",
 					"name" : "YourProgram",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/git hub data/data/game_project003/build",
-		"source" : "C:/git hub data/data/game_project003"
+		"build" : "C:/game_project003_010101/build",
+		"source" : "C:/game_project003_010101"
 	},
 	"version" : 
 	{

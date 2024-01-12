@@ -1,6 +1,12 @@
 #include "myheader.h"
 
 int initialize_all(game_data* game, plane_data* plane, int num_enemies) {
+
+    al_init_font_addon();
+    al_init_ttf_addon();
+
+    initPlayers(game->players, N_PLAYER);
+
     if (!al_init() || !al_init_image_addon() || !al_install_audio() || !al_init_acodec_addon()|| !al_install_keyboard()) {
         printf("initial failed\n");
         return -1;
@@ -23,7 +29,6 @@ int initialize_all(game_data* game, plane_data* plane, int num_enemies) {
         printf("initaial plane failed\n");
         return-1;
     }
-
 
     return 0;
 }
@@ -59,6 +64,7 @@ int initialize_game(game_data* game, int num_enemies) {
 
 
 int initialize_enemies(enemy_data* enemies, int num_enemies, ALLEGRO_DISPLAY* display, ALLEGRO_EVENT_QUEUE* event_queue) {
+    
     srand(time(NULL));
     
     for (int i = 0; i < num_enemies; ++i) {
@@ -122,12 +128,12 @@ void initialize_plane_bullet(plane_data* plane, int index)
     
 }
 
-#include "myheader.h"
 
 void Gamebackground_call(game_data* game, plane_data* plane) {
     al_play_sample_instance(game->background_music_instance);
 
     while (1) {
+
         update_enemy_positions(game, plane);
         draw_game(game, plane);
         fire_plane_bullet(plane);

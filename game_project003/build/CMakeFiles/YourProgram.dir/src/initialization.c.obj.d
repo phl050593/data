@@ -1,6 +1,6 @@
 CMakeFiles/YourProgram.dir/src/initialization.c.obj: \
-  C:/git\ hub\ data/data/game_project003/src/initialization.c \
-  C:/GITHUB~1/data/GAME_P~1/include/myheader.h \
+  C:/game_project003_010101/src/initialization.c \
+  C:/game_project003_010101/include/myheader.h \
   C:/llvm-mingw-20231114-msvcrt-x86_64/include/stdio.h \
   C:/llvm-mingw-20231114-msvcrt-x86_64/include/corecrt_stdio_config.h \
   C:/llvm-mingw-20231114-msvcrt-x86_64/include/corecrt.h \
@@ -92,4 +92,6 @@ CMakeFiles/YourProgram.dir/src/initialization.c.obj: \
   D:/AllegroLib_5.2.8/include/allegro5/platform/alwin.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_image.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_audio.h \
-  D:/AllegroLib_5.2.8/include/allegro5/allegro_acodec.h
+  D:/AllegroLib_5.2.8/include/allegro5/allegro_acodec.h \
+  D:/AllegroLib_5.2.8/include/allegro5/allegro_font.h \
+  D:/AllegroLib_5.2.8/include/allegro5/allegro_ttf.h

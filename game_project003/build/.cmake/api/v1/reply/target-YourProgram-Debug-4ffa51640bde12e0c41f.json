@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "C:/git hub data/data/game_project003/YourProgram.exe"
+			"path" : "C:/game_project003_010101/YourProgram.exe"
 		},
 		{
-			"path" : "C:/git hub data/data/game_project003/YourProgram.pdb"
+			"path" : "C:/game_project003_010101/YourProgram.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -69,7 +69,7 @@
 				},
 				{
 					"backtrace" : 4,
-					"path" : "C:/git hub data/data/game_project003/include"
+					"path" : "C:/game_project003_010101/include"
 				}
 			],
 			"language" : "C",
@@ -79,7 +79,8 @@
 				1,
 				2,
 				3,
-				4
+				4,
+				5
 			]
 		}
 	],
@@ -160,7 +161,8 @@
 				1,
 				2,
 				3,
-				4
+				4,
+				5
 			]
 		}
 	],
@@ -188,6 +190,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/main.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/score.c",
 			"sourceGroupIndex" : 0
 		},
 		{

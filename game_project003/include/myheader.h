@@ -6,6 +6,8 @@
 #include <allegro5/allegro_image.h>
 #include <allegro5/allegro_audio.h>
 #include <allegro5/allegro_acodec.h>
+#include <allegro5/allegro_font.h>
+#include <allegro5/allegro_ttf.h>
 
 #define SCREEN_W 700
 #define SCREEN_H 860
@@ -21,6 +23,14 @@
 
 #define MAX_PLANE_BULLETS 1
 #define PLANE_BULLET_UPDATE_TIMER 0.005
+
+#define PLAYER_1 1
+#define N_PLAYER 4 //先放著沒有用
+
+typedef struct player_data {
+    char name[20];
+    int score;
+} player_data;
 
 typedef struct enemy_bullet_data {
     float x;
@@ -86,9 +96,13 @@ typedef struct game_data {
     int num_enemies;
     ALLEGRO_SAMPLE* background_music;
     ALLEGRO_SAMPLE_INSTANCE* background_music_instance;
-    
+
+    ALLEGRO_FONT *Font;
+    player_data players[N_PLAYER];
 } game_data;
 
+void initPlayers(player_data *players, int nPlayer);
+//void getScore(game_data *game_dataPtr, plane_data* planePtr, int player);
 
 void Gamebackground_call(game_data* game, plane_data* plane);
 void draw_enemies(game_data* game);

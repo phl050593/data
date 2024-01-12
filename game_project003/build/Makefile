@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\git hub data\data\game_project003"
+CMAKE_SOURCE_DIR = C:\game_project003_010101
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\git hub data\data\game_project003\build"
+CMAKE_BINARY_DIR = C:\game_project003_010101\build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\git hub data\data\game_project003\build\CMakeFiles" "C:\git hub data\data\game_project003\build\\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\game_project003_010101\build\CMakeFiles C:\game_project003_010101\build\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\git hub data\data\game_project003\build\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\game_project003_010101\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -224,6 +224,30 @@ src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/score.obj: src/score.c.obj
+.PHONY : src/score.obj
+
+# target to build an object file
+src/score.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/score.c.obj
+.PHONY : src/score.c.obj
+
+src/score.i: src/score.c.i
+.PHONY : src/score.i
+
+# target to preprocess a source file
+src/score.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/score.c.i
+.PHONY : src/score.c.i
+
+src/score.s: src/score.c.s
+.PHONY : src/score.s
+
+# target to generate assembly for a file
+src/score.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/score.c.s
+.PHONY : src/score.c.s
+
 src/updating.obj: src/updating.c.obj
 .PHONY : src/updating.obj
 
@@ -269,6 +293,9 @@ help:
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/score.obj
+	@echo ... src/score.i
+	@echo ... src/score.s
 	@echo ... src/updating.obj
 	@echo ... src/updating.i
 	@echo ... src/updating.s

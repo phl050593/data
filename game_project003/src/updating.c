@@ -53,7 +53,7 @@ void fire_bullet(enemy_data* enemy) {
         initialize_bullet(enemy, enemy->num_bullets);
         
         enemy->num_bullets++;
-        al_play_sample(enemy->shoot_sound, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
+        al_play_sample(enemy->shoot_sound, 0.2, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
     }
 }
 
@@ -81,15 +81,15 @@ void fire_plane_bullet(plane_data* plane) {
     }
 }
 
-
+/*
 int check_collision(float x1, float y1, int w1, int h1, float x2, float y2, int w2, int h2) {
     return x1 < x2 + w2 &&
            x1 + w1 > x2 &&
            y1 < y2 + h2 &&
            y1 + h1 > y2;
 }
-
-
+*/
+/*
 void check_and_remove_bullet_collision(game_data* game, plane_data* plane) {
     
     for (int i = 0; i < game->num_enemies; ++i) {
@@ -132,14 +132,8 @@ void check_and_remove_bullet_collision(game_data* game, plane_data* plane) {
             game->enemies[i] = game->enemies[game->num_enemies - 1];
            
             game->num_enemies--;
-
-        
-
         }
-
-
     }
-
 
     if(game->num_enemies == 0){
         printf("You WIN\n");
@@ -156,6 +150,5 @@ void check_and_remove_bullet_collision(game_data* game, plane_data* plane) {
         cleanup_plane(plane);
         
     }
-
-   
 }
+*/

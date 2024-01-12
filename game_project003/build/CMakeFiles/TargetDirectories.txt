@@ -1,3 +1,3 @@
-C:/git hub data/data/game_project003/build/CMakeFiles/YourProgram.dir
-C:/git hub data/data/game_project003/build/CMakeFiles/edit_cache.dir
-C:/git hub data/data/game_project003/build/CMakeFiles/rebuild_cache.dir
+C:/game_project003_010101/build/CMakeFiles/YourProgram.dir
+C:/game_project003_010101/build/CMakeFiles/edit_cache.dir
+C:/game_project003_010101/build/CMakeFiles/rebuild_cache.dir
