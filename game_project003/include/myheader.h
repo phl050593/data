@@ -13,10 +13,10 @@
 #define SCREEN_H 860
 #define MAX_ENEMIES 100
 #define MAX_BULLETS 50
-#define BULLET_UPDATE_TIMER 0.005
+#define BULLET_UPDATE_TIMER 0.05
 
 #define BALL_SIZE 40
-#define PLANE_MOVE 15
+#define PLANE_MOVE 20
 #define PLANE_MIN 0
 #define PLANE_MAX 700
 #define PLANE_SIZE 40
@@ -108,6 +108,10 @@ typedef struct menu
     ALLEGRO_BITMAP* startGameImage;
     ALLEGRO_BITMAP* exitGameImage;
     ALLEGRO_BITMAP* menuBackgroundImage;
+    ALLEGRO_BITMAP* illustrateImage;
+    
+    float illustrateX;
+    float illustrateY;
     float startX;
     float startY;
     float exitX;

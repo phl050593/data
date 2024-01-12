@@ -6,11 +6,12 @@ void menu_call() {
     menu button;
 
 
+
     if (initializeButton(&button) != 0) {
         fprintf(stderr, "Initialization failed!\n");
         return;
     }
-
+    
     while (1) {
         drawMenu(&button);
 
@@ -24,13 +25,11 @@ void menu_call() {
                 initialize_all(&game, &plane , 5);
                 game.Font = NULL;
                 game.Font = al_load_ttf_font("assets/arial.ttf", 16, 0);
-
                 Gamebackground_call(&game,&plane);
                 printf("Switching to game\n");
                 cleanup(&game);
                 cleanup_enemies(&game);
                 cleanup_plane(&plane);
-     
             }
             if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE || button.shouldExit) {
             button.shouldExit = true;

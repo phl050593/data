@@ -8,6 +8,7 @@ void draw_game(game_data* game, plane_data* plane) {
     al_draw_textf(game->Font, al_map_rgb(255, 255, 255), 75, 0, -1,"Player Score: %d", game->players[PLAYER_1].score);
     al_draw_textf(game->Font, al_map_rgb(255, 255, 255), 600, 0, -1,"Plane Health: %d", plane->health);
 
+
     al_flip_display();
 }
 
@@ -88,11 +89,19 @@ void drawMenu(menu* button) {
     // 繪製 exit 按鈕
     int exitWidth = al_get_bitmap_width(button->exitGameImage);
     int exitHeight = al_get_bitmap_height(button->exitGameImage);
-    
     float exitX = (SCREEN_W - exitWidth) / 2.0;
     float exitY = (SCREEN_H - exitHeight) / 2.0 + 50.0;
     
     al_draw_bitmap(button->exitGameImage, exitX, exitY, 0);
+
+    int illustrateWidth = al_get_bitmap_width(button->illustrateImage);
+    int illustrateHeight = al_get_bitmap_height(button->illustrateImage);
+    float illustrateX = (SCREEN_W - exitWidth) / 2.0 - 150.0;
+    float illustrateY = (SCREEN_H - exitHeight) / 2.0 + 150.0;
+
+    al_draw_bitmap(button->illustrateImage, illustrateX, illustrateY, 0);
+
+
 
     al_flip_display();
 }

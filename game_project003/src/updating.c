@@ -53,7 +53,7 @@ void fire_bullet(enemy_data* enemy) {
         initialize_bullet(enemy, enemy->num_bullets);
         
         enemy->num_bullets++;
-        al_play_sample(enemy->shoot_sound, 0.2, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
+        al_play_sample(enemy->shoot_sound, 0.1, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
     }
 }
 

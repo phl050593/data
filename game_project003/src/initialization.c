@@ -32,6 +32,8 @@ int initialize_all(game_data* game, plane_data* plane, int num_enemies) {
 }
 
 int initializeButton(menu* button){
+    al_init_font_addon();
+    al_init_ttf_addon();
 
 if (!al_init() || !al_init_image_addon()) {
         fprintf(stderr, "Failed to initialize Allegro!\n");
@@ -61,6 +63,14 @@ if (!al_init() || !al_init_image_addon()) {
     }
     button->exitX = (SCREEN_W - al_get_bitmap_width(button->exitGameImage)) / 2.0;
     button->exitY = (SCREEN_H - al_get_bitmap_height(button->exitGameImage)) / 2.0 +50;
+
+    button->illustrateImage=al_load_bitmap("./illustrate.jpg");
+    if (!button->illustrateImage) {
+        fprintf(stderr, "Failed to load illustrate image!\n");
+        return -1;
+    }
+    button->illustrateX = (SCREEN_W - al_get_bitmap_width(button->exitGameImage)) / 2.0;
+    button->illustrateY = (SCREEN_H - al_get_bitmap_height(button->exitGameImage)) / 2.0 +100;
     
     button->event_queue = al_create_event_queue();
     if (!button->event_queue) {
@@ -173,7 +183,7 @@ int initialize_plane(plane_data* plane) {
     plane->health = 5;
     plane->x = SCREEN_W / 2;
     plane->y = SCREEN_H - PLANE_SIZE - 10;
-    plane->plane_img = al_load_bitmap("./ball.bmp");
+    plane->plane_img = al_load_bitmap("./plane.png");
     plane->plane_timer = al_create_timer(1.0 / 60);
     plane->event_plane_queue = al_create_event_queue(); 
     plane->event_plane_bullet_queue = al_create_event_queue(); 

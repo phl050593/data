@@ -45,7 +45,7 @@ void check_and_remove_bullet_collision(game_data *game, plane_data *plane)
                 if (check_collision(plane->bullets[i].x, plane->bullets[i].y,
                                     plane->bullets[i].width, plane->bullets[i].height,
                                     game->enemies[j].x, game->enemies[j].y,
-                                    game->enemies[j].width, game->enemies[j].height))
+                                    game->enemies[j].width-20, game->enemies[j].height))
                 {
                     al_destroy_bitmap(plane->bullets[i].bullet);
                     plane->bullets[i] = plane->bullets[plane->num_bullets - 1];
