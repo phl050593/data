@@ -101,25 +101,6 @@ typedef struct game_data {
     player_data players[N_PLAYER];
 } game_data;
 
-typedef struct menu
-{
-    ALLEGRO_DISPLAY* display;
-    ALLEGRO_EVENT_QUEUE* event_queue;
-    ALLEGRO_BITMAP* startGameImage;
-    ALLEGRO_BITMAP* exitGameImage;
-    ALLEGRO_BITMAP* menuBackgroundImage;
-    float startX;
-    float startY;
-    float exitX;
-    float exitY;
-    bool isPressed;
-    bool isXInButtonRange;
-    bool isYInButtonRange;
-    bool isXInButtonRange_exit;
-    bool isYInButtonRange_exit;
-    bool shouldExit;
-} menu;
-
 void initPlayers(player_data *players, int nPlayer);
 //void getScore(game_data *game_dataPtr, plane_data* planePtr, int player);
 
@@ -143,15 +124,6 @@ int initialize_enemies(enemy_data* enemies, int num_enemies, ALLEGRO_DISPLAY* di
 void initialize_bullet(enemy_data* enemy, int index);
 void initialize_plane_bullet(plane_data* enemy, int index);
 int initialize_plane(plane_data* plane);
-
-
-
-int initializeButton(menu* button);
-void drawMenu(menu* button);
-void cleanupMenu(menu* button);
-void handleInput(ALLEGRO_EVENT *ev, menu *button, game_data *game);
-void menu_call();
-
 
 void movePlane(plane_data* plane, const ALLEGRO_KEYBOARD_EVENT* kbEvent);
 

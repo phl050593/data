@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\game_projectmenu03
+CMAKE_SOURCE_DIR = C:\data\game_project003
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\game_projectmenu03\build
+CMAKE_BINARY_DIR = C:\data\game_project003\build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\game_projectmenu03\build\CMakeFiles C:\game_projectmenu03\build\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\data\game_project003\build\CMakeFiles C:\data\game_project003\build\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\game_projectmenu03\build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\data\game_project003\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -175,30 +175,6 @@ src/drawing.s: src/drawing.c.s
 src/drawing.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/drawing.c.s
 .PHONY : src/drawing.c.s
-
-src/game_call.obj: src/game_call.c.obj
-.PHONY : src/game_call.obj
-
-# target to build an object file
-src/game_call.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/game_call.c.obj
-.PHONY : src/game_call.c.obj
-
-src/game_call.i: src/game_call.c.i
-.PHONY : src/game_call.i
-
-# target to preprocess a source file
-src/game_call.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/game_call.c.i
-.PHONY : src/game_call.c.i
-
-src/game_call.s: src/game_call.c.s
-.PHONY : src/game_call.s
-
-# target to generate assembly for a file
-src/game_call.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/game_call.c.s
-.PHONY : src/game_call.c.s
 
 src/initialization.obj: src/initialization.c.obj
 .PHONY : src/initialization.obj
@@ -311,9 +287,6 @@ help:
 	@echo ... src/drawing.obj
 	@echo ... src/drawing.i
 	@echo ... src/drawing.s
-	@echo ... src/game_call.obj
-	@echo ... src/game_call.i
-	@echo ... src/game_call.s
 	@echo ... src/initialization.obj
 	@echo ... src/initialization.i
 	@echo ... src/initialization.s

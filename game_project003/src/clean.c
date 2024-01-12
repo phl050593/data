@@ -33,12 +33,3 @@ void cleanup_plane(plane_data*plane){
      al_destroy_timer(plane->plane_bullet_timer);
 
 }
-
-void cleanupMenu(menu* button) {
-    al_destroy_bitmap(button->menuBackgroundImage);
-    al_destroy_bitmap(button->startGameImage);
-    al_destroy_bitmap(button->exitGameImage);
-    al_destroy_display(button->display);
-    al_destroy_event_queue(button->event_queue);
-}
-

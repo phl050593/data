@@ -151,7 +151,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/game_projectmenu03/build"
+			"value" : "c:/data/game_project003/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -715,7 +715,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/game_projectmenu03/build/CMakeFiles/pkgRedirects"
+			"value" : "C:/data/game_project003/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -787,7 +787,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/game_projectmenu03"
+			"value" : "C:/data/game_project003"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1423,7 +1423,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/game_projectmenu03/build"
+			"value" : "C:/data/game_project003/build"
 		},
 		{
 			"name" : "YourAllegroProject_IS_TOP_LEVEL",
@@ -1447,7 +1447,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/game_projectmenu03"
+			"value" : "C:/data/game_project003"
 		},
 		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
