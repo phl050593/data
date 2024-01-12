@@ -83,8 +83,8 @@ void check_and_remove_bullet_collision(game_data *game, plane_data *plane)
         cleanup_plane(plane);
     }
 
-    if (plane->health == 0)
-    {
+    if (plane->health == 1)
+    {   
         printf("You LOSE\n");
         cleanup(game);
         cleanup_enemies(game);

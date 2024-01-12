@@ -6,6 +6,7 @@ void draw_game(game_data* game, plane_data* plane) {
     draw_enemies(game);
     draw_plane(plane);
     al_draw_textf(game->Font, al_map_rgb(255, 255, 255), 75, 0, -1,"Player Score: %d", game->players[PLAYER_1].score);
+    al_draw_textf(game->Font, al_map_rgb(255, 255, 255), 600, 0, -1,"Plane Health: %d", plane->health);
 
     al_flip_display();
 }
@@ -66,4 +67,32 @@ void draw_plane(plane_data* plane)
                 0
             );
         }
+}
+
+void drawMenu(menu* button) {
+    al_clear_to_color(al_map_rgb(0, 0, 0));
+
+    int img_w = al_get_bitmap_width(button->menuBackgroundImage);
+    int img_h = al_get_bitmap_height(button->menuBackgroundImage);
+    al_draw_scaled_bitmap(
+        button->menuBackgroundImage, 0, 0, img_w, img_h, 0, 0, SCREEN_W, SCREEN_H, 0
+    );
+    int startWidth = al_get_bitmap_width(button->startGameImage);
+    int startHeight = al_get_bitmap_height(button->startGameImage);
+    
+    float startX = (SCREEN_W - startWidth) / 2.0;
+    float startY = (SCREEN_H - startHeight) / 2.0 - 50.0;  // 調整 Y 座標
+
+    al_draw_bitmap(button->startGameImage, startX, startY, 0);
+
+    // 繪製 exit 按鈕
+    int exitWidth = al_get_bitmap_width(button->exitGameImage);
+    int exitHeight = al_get_bitmap_height(button->exitGameImage);
+    
+    float exitX = (SCREEN_W - exitWidth) / 2.0;
+    float exitY = (SCREEN_H - exitHeight) / 2.0 + 50.0;
+    
+    al_draw_bitmap(button->exitGameImage, exitX, exitY, 0);
+
+    al_flip_display();
 }

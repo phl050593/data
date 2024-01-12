@@ -151,7 +151,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/game_project003_010101/build"
+			"value" : "c:/game_projectmenu03/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -251,10 +251,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "CXX compiler"
 				}
 			],
-			"type" : "FILEPATH",
+			"type" : "STRING",
 			"value" : "C:/llvm-mingw-20231114-msvcrt-x86_64/bin/clang++.exe"
 		},
 		{
@@ -411,10 +411,10 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "C compiler"
 				}
 			],
-			"type" : "FILEPATH",
+			"type" : "STRING",
 			"value" : "C:/llvm-mingw-20231114-msvcrt-x86_64/bin/clang.exe"
 		},
 		{
@@ -715,7 +715,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/game_project003_010101/build/CMakeFiles/pkgRedirects"
+			"value" : "C:/game_projectmenu03/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -787,7 +787,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/game_project003_010101"
+			"value" : "C:/game_projectmenu03"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1423,7 +1423,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/game_project003_010101/build"
+			"value" : "C:/game_projectmenu03/build"
 		},
 		{
 			"name" : "YourAllegroProject_IS_TOP_LEVEL",
@@ -1447,7 +1447,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/game_project003_010101"
+			"value" : "C:/game_projectmenu03"
 		},
 		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",

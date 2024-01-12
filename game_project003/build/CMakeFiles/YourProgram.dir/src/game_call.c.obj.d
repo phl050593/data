@@ -1,5 +1,5 @@
-CMakeFiles/YourProgram.dir/src/initialization.c.obj: \
-  C:/game_projectmenu03/src/initialization.c \
+CMakeFiles/YourProgram.dir/src/game_call.c.obj: \
+  C:/game_projectmenu03/src/game_call.c \
   C:/game_projectmenu03/include/myheader.h \
   C:/llvm-mingw-20231114-msvcrt-x86_64/include/stdio.h \
   C:/llvm-mingw-20231114-msvcrt-x86_64/include/corecrt_stdio_config.h \
