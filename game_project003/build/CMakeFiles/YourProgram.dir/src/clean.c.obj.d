@@ -1,6 +1,6 @@
 CMakeFiles/YourProgram.dir/src/clean.c.obj: \
-  C:/game_project003_010101/src/clean.c \
-  C:/game_project003_010101/include/myheader.h \
+  C:/data/game_project003/src/clean.c \
+  C:/data/game_project003/include/myheader.h \
   C:/llvm-mingw-20231114-msvcrt-x86_64/include/stdio.h \
   C:/llvm-mingw-20231114-msvcrt-x86_64/include/corecrt_stdio_config.h \
   C:/llvm-mingw-20231114-msvcrt-x86_64/include/corecrt.h \

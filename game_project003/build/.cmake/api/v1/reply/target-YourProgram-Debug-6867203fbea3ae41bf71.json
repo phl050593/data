@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "C:/game_project003_010101/YourProgram.exe"
+			"path" : "C:/data/game_project003/YourProgram.exe"
 		},
 		{
-			"path" : "C:/game_project003_010101/YourProgram.pdb"
+			"path" : "C:/data/game_project003/YourProgram.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -69,7 +69,7 @@
 				},
 				{
 					"backtrace" : 4,
-					"path" : "C:/game_project003_010101/include"
+					"path" : "C:/data/game_project003/include"
 				}
 			],
 			"language" : "C",
