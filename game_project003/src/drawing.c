@@ -54,7 +54,7 @@ void draw_plane(game_data *game,plane_data *plane)
 {
     al_draw_bitmap(plane->plane_img, plane->x, plane->y, 0);
 
-    if (game->players[PLAYER_1].score < 40)
+    if (game->players[PLAYER_1].score < 320)
     {
         for (int j = 0; j < plane->num_bullets; ++j) 
         {
@@ -72,7 +72,7 @@ void draw_plane(game_data *game,plane_data *plane)
         }
     }
 
-    if (game->players[PLAYER_1].score >= 40)
+    if (game->players[PLAYER_1].score >= 320)
     {
         for (int j = 0; j < plane->num_bullets2; ++j)
         {

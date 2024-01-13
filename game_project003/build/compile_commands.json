@@ -1,56 +1,56 @@
 [
 {
-  "directory": "C:/game_project00305/build",
-  "command": "C:\\llvm-mingw-20231114-msvcrt-x86_64\\bin\\clang.exe  @CMakeFiles/YourProgram.dir/includes_C.rsp -g -o CMakeFiles\\YourProgram.dir\\src\\clean.c.obj -c C:\\game_project00305\\src\\clean.c",
-  "file": "C:/game_project00305/src/clean.c",
+  "directory": "C:/git hub data/data/game_project003/build",
+  "command": "C:\\llvm-mingw-20231114-msvcrt-x86_64\\bin\\clang.exe  @CMakeFiles/YourProgram.dir/includes_C.rsp -g -o CMakeFiles\\YourProgram.dir\\src\\clean.c.obj -c \"C:\\git hub data\\data\\game_project003\\src\\clean.c\"",
+  "file": "C:/git hub data/data/game_project003/src/clean.c",
   "output": "CMakeFiles/YourProgram.dir/src/clean.c.obj"
 },
 {
-  "directory": "C:/game_project00305/build",
-  "command": "C:\\llvm-mingw-20231114-msvcrt-x86_64\\bin\\clang.exe  @CMakeFiles/YourProgram.dir/includes_C.rsp -g -o CMakeFiles\\YourProgram.dir\\src\\drawing.c.obj -c C:\\game_project00305\\src\\drawing.c",
-  "file": "C:/game_project00305/src/drawing.c",
+  "directory": "C:/git hub data/data/game_project003/build",
+  "command": "C:\\llvm-mingw-20231114-msvcrt-x86_64\\bin\\clang.exe  @CMakeFiles/YourProgram.dir/includes_C.rsp -g -o CMakeFiles\\YourProgram.dir\\src\\drawing.c.obj -c \"C:\\git hub data\\data\\game_project003\\src\\drawing.c\"",
+  "file": "C:/git hub data/data/game_project003/src/drawing.c",
   "output": "CMakeFiles/YourProgram.dir/src/drawing.c.obj"
 },
 {
-  "directory": "C:/game_project00305/build",
-  "command": "C:\\llvm-mingw-20231114-msvcrt-x86_64\\bin\\clang.exe  @CMakeFiles/YourProgram.dir/includes_C.rsp -g -o CMakeFiles\\YourProgram.dir\\src\\fast_prototyping.c.obj -c C:\\game_project00305\\src\\fast_prototyping.c",
-  "file": "C:/game_project00305/src/fast_prototyping.c",
+  "directory": "C:/git hub data/data/game_project003/build",
+  "command": "C:\\llvm-mingw-20231114-msvcrt-x86_64\\bin\\clang.exe  @CMakeFiles/YourProgram.dir/includes_C.rsp -g -o CMakeFiles\\YourProgram.dir\\src\\fast_prototyping.c.obj -c \"C:\\git hub data\\data\\game_project003\\src\\fast_prototyping.c\"",
+  "file": "C:/git hub data/data/game_project003/src/fast_prototyping.c",
   "output": "CMakeFiles/YourProgram.dir/src/fast_prototyping.c.obj"
 },
 {
-  "directory": "C:/game_project00305/build",
-  "command": "C:\\llvm-mingw-20231114-msvcrt-x86_64\\bin\\clang.exe  @CMakeFiles/YourProgram.dir/includes_C.rsp -g -o CMakeFiles\\YourProgram.dir\\src\\game_call.c.obj -c C:\\game_project00305\\src\\game_call.c",
-  "file": "C:/game_project00305/src/game_call.c",
+  "directory": "C:/git hub data/data/game_project003/build",
+  "command": "C:\\llvm-mingw-20231114-msvcrt-x86_64\\bin\\clang.exe  @CMakeFiles/YourProgram.dir/includes_C.rsp -g -o CMakeFiles\\YourProgram.dir\\src\\game_call.c.obj -c \"C:\\git hub data\\data\\game_project003\\src\\game_call.c\"",
+  "file": "C:/git hub data/data/game_project003/src/game_call.c",
   "output": "CMakeFiles/YourProgram.dir/src/game_call.c.obj"
 },
 {
-  "directory": "C:/game_project00305/build",
-  "command": "C:\\llvm-mingw-20231114-msvcrt-x86_64\\bin\\clang.exe  @CMakeFiles/YourProgram.dir/includes_C.rsp -g -o CMakeFiles\\YourProgram.dir\\src\\initialization.c.obj -c C:\\game_project00305\\src\\initialization.c",
-  "file": "C:/game_project00305/src/initialization.c",
+  "directory": "C:/git hub data/data/game_project003/build",
+  "command": "C:\\llvm-mingw-20231114-msvcrt-x86_64\\bin\\clang.exe  @CMakeFiles/YourProgram.dir/includes_C.rsp -g -o CMakeFiles\\YourProgram.dir\\src\\initialization.c.obj -c \"C:\\git hub data\\data\\game_project003\\src\\initialization.c\"",
+  "file": "C:/git hub data/data/game_project003/src/initialization.c",
   "output": "CMakeFiles/YourProgram.dir/src/initialization.c.obj"
 },
 {
-  "directory": "C:/game_project00305/build",
-  "command": "C:\\llvm-mingw-20231114-msvcrt-x86_64\\bin\\clang.exe  @CMakeFiles/YourProgram.dir/includes_C.rsp -g -o CMakeFiles\\YourProgram.dir\\src\\main.c.obj -c C:\\game_project00305\\src\\main.c",
-  "file": "C:/game_project00305/src/main.c",
+  "directory": "C:/git hub data/data/game_project003/build",
+  "command": "C:\\llvm-mingw-20231114-msvcrt-x86_64\\bin\\clang.exe  @CMakeFiles/YourProgram.dir/includes_C.rsp -g -o CMakeFiles\\YourProgram.dir\\src\\main.c.obj -c \"C:\\git hub data\\data\\game_project003\\src\\main.c\"",
+  "file": "C:/git hub data/data/game_project003/src/main.c",
   "output": "CMakeFiles/YourProgram.dir/src/main.c.obj"
 },
 {
-  "directory": "C:/game_project00305/build",
-  "command": "C:\\llvm-mingw-20231114-msvcrt-x86_64\\bin\\clang.exe  @CMakeFiles/YourProgram.dir/includes_C.rsp -g -o CMakeFiles\\YourProgram.dir\\src\\score.c.obj -c C:\\game_project00305\\src\\score.c",
-  "file": "C:/game_project00305/src/score.c",
+  "directory": "C:/git hub data/data/game_project003/build",
+  "command": "C:\\llvm-mingw-20231114-msvcrt-x86_64\\bin\\clang.exe  @CMakeFiles/YourProgram.dir/includes_C.rsp -g -o CMakeFiles\\YourProgram.dir\\src\\score.c.obj -c \"C:\\git hub data\\data\\game_project003\\src\\score.c\"",
+  "file": "C:/git hub data/data/game_project003/src/score.c",
   "output": "CMakeFiles/YourProgram.dir/src/score.c.obj"
 },
 {
-  "directory": "C:/game_project00305/build",
-  "command": "C:\\llvm-mingw-20231114-msvcrt-x86_64\\bin\\clang.exe  @CMakeFiles/YourProgram.dir/includes_C.rsp -g -o CMakeFiles\\YourProgram.dir\\src\\updating.c.obj -c C:\\game_project00305\\src\\updating.c",
-  "file": "C:/game_project00305/src/updating.c",
+  "directory": "C:/git hub data/data/game_project003/build",
+  "command": "C:\\llvm-mingw-20231114-msvcrt-x86_64\\bin\\clang.exe  @CMakeFiles/YourProgram.dir/includes_C.rsp -g -o CMakeFiles\\YourProgram.dir\\src\\updating.c.obj -c \"C:\\git hub data\\data\\game_project003\\src\\updating.c\"",
+  "file": "C:/git hub data/data/game_project003/src/updating.c",
   "output": "CMakeFiles/YourProgram.dir/src/updating.c.obj"
 },
 {
-  "directory": "C:/game_project00305/build",
-  "command": "C:\\llvm-mingw-20231114-msvcrt-x86_64\\bin\\clang.exe  @CMakeFiles/YourProgram.dir/includes_C.rsp -g -o CMakeFiles\\YourProgram.dir\\src\\weapon.c.obj -c C:\\game_project00305\\src\\weapon.c",
-  "file": "C:/game_project00305/src/weapon.c",
+  "directory": "C:/git hub data/data/game_project003/build",
+  "command": "C:\\llvm-mingw-20231114-msvcrt-x86_64\\bin\\clang.exe  @CMakeFiles/YourProgram.dir/includes_C.rsp -g -o CMakeFiles\\YourProgram.dir\\src\\weapon.c.obj -c \"C:\\git hub data\\data\\game_project003\\src\\weapon.c\"",
+  "file": "C:/git hub data/data/game_project003/src/weapon.c",
   "output": "CMakeFiles/YourProgram.dir/src/weapon.c.obj"
 }
 ]

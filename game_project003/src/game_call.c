@@ -57,12 +57,12 @@ void Gamebackground_call(game_data* game, plane_data* plane) {
         if (!isPaused) {
             update_enemy_positions(game, plane);
             draw_game(game, plane);
-        if (game->players[PLAYER_1].score < 40)
+        if (game->players[PLAYER_1].score < 320)
             fire_plane_bullet(plane);
 
-        if (game->players[PLAYER_1].score >= 40)
+        if (game->players[PLAYER_1].score >= 320)
             fire_plane_bullet2(plane);
-            
+                
         }
 
 
@@ -73,6 +73,9 @@ void Gamebackground_call(game_data* game, plane_data* plane) {
         al_wait_for_event(plane->event_plane_queue, &plane_ev);
 
         if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE || (plane_ev.type == ALLEGRO_EVENT_KEY_DOWN && plane_ev.keyboard.keycode == ALLEGRO_KEY_ESCAPE)) {
+            cleanup(game);
+            cleanup_enemies(game);
+            cleanup_plane(plane);  
             break;
         } else if (plane_ev.type == ALLEGRO_EVENT_KEY_DOWN || plane_ev.type == ALLEGRO_EVENT_KEY_UP) {
             

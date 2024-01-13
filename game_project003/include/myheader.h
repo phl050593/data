@@ -12,15 +12,16 @@
 #define SCREEN_W 700
 #define SCREEN_H 860
 #define MAX_ENEMIES 100
-#define MAX_BULLETS 50
+#define MAX_BULLETS 70
 #define BULLET_UPDATE_TIMER 0.05
-
+#define NEW_ENEMY_COUNT 2
 #define BALL_SIZE 40
 #define PLANE_MOVE 20
 #define PLANE_MIN 0
 #define PLANE_MAX 700
 #define PLANE_SIZE 40
-
+#define MAX_ENEMIES_LEVEL2 6
+#define MAX_ENEMIES_LEVEL3 8
 #define MAX_PLANE_BULLETS 1
 #define PLANE_BULLET_UPDATE_TIMER 0.005
 
@@ -111,7 +112,7 @@ typedef struct game_data {
     int num_enemies;
     ALLEGRO_SAMPLE* background_music;
     ALLEGRO_SAMPLE_INSTANCE* background_music_instance;
-
+    ALLEGRO_TIMER* bullet_spawn_timer;
     ALLEGRO_FONT *Font;
     player_data players[N_PLAYER];
     ALLEGRO_BITMAP* pause_image;
@@ -180,6 +181,9 @@ void movePlane(plane_data* plane, const ALLEGRO_KEYBOARD_EVENT* kbEvent);
 int check_collision(float x1, float y1, int w1, int h1, float x2, float y2, int w2, int h2);
 
 void check_and_remove_bullet_collision(game_data* game, plane_data* plane);
+int check_collision_with_existing(game_data* game, enemy_data* new_enemy);
 
-
+void spawn_new_enemies(game_data* game);
+void spawn_new_enemies2(game_data* game);
+void spawn_new_enemies3(game_data* game);
 #endif // _MYHEADER_H_
