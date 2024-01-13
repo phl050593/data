@@ -94,4 +94,5 @@ CMakeFiles/YourProgram.dir/src/clean.c.obj: \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_audio.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_acodec.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_font.h \
-  D:/AllegroLib_5.2.8/include/allegro5/allegro_ttf.h
+  D:/AllegroLib_5.2.8/include/allegro5/allegro_ttf.h \
+  D:/AllegroLib_5.2.8/include/allegro5/allegro_native_dialog.h

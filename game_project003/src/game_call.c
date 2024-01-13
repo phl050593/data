@@ -48,13 +48,23 @@ void menu_call() {
 }
 
 
+
+
+
+
 void Gamebackground_call(game_data* game, plane_data* plane) {
     al_play_sample_instance(game->background_music_instance);
     printf("gamebackground call\n");
+
+    int isPaused = 0;
+    bool showImage = false;  
+
     while (1) {
-        update_enemy_positions(game,plane);
-        draw_game(game, plane);
-        fire_plane_bullet(plane);
+        if (!isPaused) {
+            update_enemy_positions(game, plane);
+            draw_game(game, plane);
+            fire_plane_bullet(plane);
+        }
 
         ALLEGRO_EVENT ev;
         ALLEGRO_EVENT plane_ev;
@@ -63,12 +73,26 @@ void Gamebackground_call(game_data* game, plane_data* plane) {
         al_wait_for_event(plane->event_plane_queue, &plane_ev);
 
         if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE || (plane_ev.type == ALLEGRO_EVENT_KEY_DOWN && plane_ev.keyboard.keycode == ALLEGRO_KEY_ESCAPE)) {
-            break; 
+            break;
         } else if (plane_ev.type == ALLEGRO_EVENT_KEY_DOWN || plane_ev.type == ALLEGRO_EVENT_KEY_UP) {
-            movePlane(plane, &plane_ev.keyboard);
+            
+            if (plane_ev.keyboard.keycode == ALLEGRO_KEY_TAB && plane_ev.type == ALLEGRO_EVENT_KEY_DOWN) {
+                isPaused = !isPaused;
+        
+                
+                showImage = !showImage;
+                if (showImage) {
+
+                    al_draw_bitmap(game->pause_image, 0, 0, 0);
+                    al_flip_display();
+                    printf("showimage\n");
+                }
+    
+            } else {
+                movePlane(plane, &plane_ev.keyboard);
+            }
         }
     }
-    
+
     cleanup_enemies(game);
 }
-

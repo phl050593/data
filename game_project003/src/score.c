@@ -1,7 +1,7 @@
 #include "myheader.h"
 
 void initPlayers(player_data *players, int nPlayer)
-{
+{   
     int i = 0;
     for (i = 0; i < nPlayer; ++i)
     {
@@ -81,6 +81,7 @@ void check_and_remove_bullet_collision(game_data *game, plane_data *plane)
         cleanup(game);
         cleanup_enemies(game);
         cleanup_plane(plane);
+        
     }
 
     if (plane->health == 1)

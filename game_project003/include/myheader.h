@@ -8,6 +8,8 @@
 #include <allegro5/allegro_acodec.h>
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_ttf.h>
+#include <allegro5/allegro_native_dialog.h>
+#include <stdbool.h>
 
 #define SCREEN_W 700
 #define SCREEN_H 860
@@ -99,6 +101,7 @@ typedef struct game_data {
 
     ALLEGRO_FONT *Font;
     player_data players[N_PLAYER];
+    ALLEGRO_BITMAP* pause_image;
 } game_data;
 
 typedef struct menu

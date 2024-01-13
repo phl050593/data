@@ -50,6 +50,7 @@ CMakeFiles/YourProgram.dir/src/clean.c.obj: C:/git\ hub\ data/data/game_project0
   D:/AllegroLib_5.2.8/include/allegro5/allegro_audio.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_font.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_image.h \
+  D:/AllegroLib_5.2.8/include/allegro5/allegro_native_dialog.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_ttf.h \
   D:/AllegroLib_5.2.8/include/allegro5/altime.h \
   D:/AllegroLib_5.2.8/include/allegro5/base.h \
@@ -147,6 +148,7 @@ CMakeFiles/YourProgram.dir/src/drawing.c.obj: C:/git\ hub\ data/data/game_projec
   D:/AllegroLib_5.2.8/include/allegro5/allegro_audio.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_font.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_image.h \
+  D:/AllegroLib_5.2.8/include/allegro5/allegro_native_dialog.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_ttf.h \
   D:/AllegroLib_5.2.8/include/allegro5/altime.h \
   D:/AllegroLib_5.2.8/include/allegro5/base.h \
@@ -244,6 +246,7 @@ CMakeFiles/YourProgram.dir/src/game_call.c.obj: C:/git\ hub\ data/data/game_proj
   D:/AllegroLib_5.2.8/include/allegro5/allegro_audio.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_font.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_image.h \
+  D:/AllegroLib_5.2.8/include/allegro5/allegro_native_dialog.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_ttf.h \
   D:/AllegroLib_5.2.8/include/allegro5/altime.h \
   D:/AllegroLib_5.2.8/include/allegro5/base.h \
@@ -341,6 +344,7 @@ CMakeFiles/YourProgram.dir/src/initialization.c.obj: C:/git\ hub\ data/data/game
   D:/AllegroLib_5.2.8/include/allegro5/allegro_audio.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_font.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_image.h \
+  D:/AllegroLib_5.2.8/include/allegro5/allegro_native_dialog.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_ttf.h \
   D:/AllegroLib_5.2.8/include/allegro5/altime.h \
   D:/AllegroLib_5.2.8/include/allegro5/base.h \
@@ -438,6 +442,7 @@ CMakeFiles/YourProgram.dir/src/main.c.obj: C:/git\ hub\ data/data/game_project00
   D:/AllegroLib_5.2.8/include/allegro5/allegro_audio.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_font.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_image.h \
+  D:/AllegroLib_5.2.8/include/allegro5/allegro_native_dialog.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_ttf.h \
   D:/AllegroLib_5.2.8/include/allegro5/altime.h \
   D:/AllegroLib_5.2.8/include/allegro5/base.h \
@@ -535,6 +540,7 @@ CMakeFiles/YourProgram.dir/src/score.c.obj: C:/git\ hub\ data/data/game_project0
   D:/AllegroLib_5.2.8/include/allegro5/allegro_audio.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_font.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_image.h \
+  D:/AllegroLib_5.2.8/include/allegro5/allegro_native_dialog.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_ttf.h \
   D:/AllegroLib_5.2.8/include/allegro5/altime.h \
   D:/AllegroLib_5.2.8/include/allegro5/base.h \
@@ -632,6 +638,7 @@ CMakeFiles/YourProgram.dir/src/updating.c.obj: C:/git\ hub\ data/data/game_proje
   D:/AllegroLib_5.2.8/include/allegro5/allegro_audio.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_font.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_image.h \
+  D:/AllegroLib_5.2.8/include/allegro5/allegro_native_dialog.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_ttf.h \
   D:/AllegroLib_5.2.8/include/allegro5/altime.h \
   D:/AllegroLib_5.2.8/include/allegro5/base.h \
@@ -783,8 +790,6 @@ C:/llvm-mingw-20231114-msvcrt-x86_64/include/sys/types.h:
 
 C:/llvm-mingw-20231114-msvcrt-x86_64/include/time.h:
 
-D:/AllegroLib_5.2.8/include/allegro5/drawing.h:
-
 C:/llvm-mingw-20231114-msvcrt-x86_64/include/vadefs.h:
 
 D:/AllegroLib_5.2.8/include/allegro5/blender.h:
@@ -815,11 +820,15 @@ D:/AllegroLib_5.2.8/include/allegro5/allegro_ttf.h:
 
 D:/AllegroLib_5.2.8/include/allegro5/allegro_audio.h:
 
+D:/AllegroLib_5.2.8/include/allegro5/allegro_native_dialog.h:
+
 D:/AllegroLib_5.2.8/include/allegro5/base.h:
 
 D:/AllegroLib_5.2.8/include/allegro5/clipboard.h:
 
 D:/AllegroLib_5.2.8/include/allegro5/cpu.h:
+
+D:/AllegroLib_5.2.8/include/allegro5/drawing.h:
 
 D:/AllegroLib_5.2.8/include/allegro5/error.h:
 

@@ -90,6 +90,7 @@ if (!al_init() || !al_init_image_addon()) {
 int initialize_game(game_data* game, int num_enemies) {
     game->display = al_create_display(SCREEN_W, SCREEN_H);
     game->background = al_load_bitmap("./starry_sky1.jpg");
+    game->pause_image = al_load_bitmap("./pause.jpg");
 
     if (!game->display || !game->background) {
         return -1;
@@ -99,6 +100,10 @@ int initialize_game(game_data* game, int num_enemies) {
     if (!game->event_queue) {
 
         return -1;
+    }
+    if (!game->pause_image) {
+
+        printf("load failed");
     }
 
     al_register_event_source(game->event_queue, al_get_display_event_source(game->display));

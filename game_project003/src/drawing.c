@@ -7,7 +7,7 @@ void draw_game(game_data* game, plane_data* plane) {
     draw_plane(plane);
     al_draw_textf(game->Font, al_map_rgb(255, 255, 255), 75, 0, -1,"Player Score: %d", game->players[PLAYER_1].score);
     al_draw_textf(game->Font, al_map_rgb(255, 255, 255), 600, 0, -1,"Plane Health: %d", plane->health);
-
+    
 
     al_flip_display();
 }
@@ -96,7 +96,7 @@ void drawMenu(menu* button) {
 
     int illustrateWidth = al_get_bitmap_width(button->illustrateImage);
     int illustrateHeight = al_get_bitmap_height(button->illustrateImage);
-    float illustrateX = (SCREEN_W - exitWidth) / 2.0 - 150.0;
+    float illustrateX = (SCREEN_W - exitWidth) / 2.0 - 200.0;
     float illustrateY = (SCREEN_H - exitHeight) / 2.0 + 150.0;
 
     al_draw_bitmap(button->illustrateImage, illustrateX, illustrateY, 0);
