@@ -8,8 +8,6 @@
 #include <allegro5/allegro_acodec.h>
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_ttf.h>
-#include <allegro5/allegro_native_dialog.h>
-#include <stdbool.h>
 
 #define SCREEN_W 700
 #define SCREEN_H 860
@@ -26,7 +24,7 @@
 #define MAX_PLANE_BULLETS 1
 #define PLANE_BULLET_UPDATE_TIMER 0.005
 
-#define PLAYER_1 1
+#define PLAYER_1 0
 #define N_PLAYER 4 //先放著沒有用
 
 typedef struct player_data {
@@ -53,6 +51,17 @@ typedef struct plane_bullet_data {
  
 } plane_bullet;
 
+typedef struct plane_bullet_data2
+{
+    float x;
+    float y;
+    float vy;
+    ALLEGRO_BITMAP *bullet;
+    int width;
+    int height;
+
+} plane_bullet2;
+
 typedef struct plane_data {
     float x;
     float y;
@@ -60,10 +69,14 @@ typedef struct plane_data {
     ALLEGRO_DISPLAY* plane_display;
     ALLEGRO_TIMER* plane_timer;
     ALLEGRO_TIMER* plane_bullet_timer;
+    ALLEGRO_TIMER* plane_bullet_timer2;
     ALLEGRO_EVENT_QUEUE* event_plane_queue;
     ALLEGRO_EVENT_QUEUE* event_plane_bullet_queue;
+    ALLEGRO_EVENT_QUEUE* event_plane_bullet_queue2;
     plane_bullet bullets[MAX_PLANE_BULLETS];
+    plane_bullet2 bullets2[MAX_PLANE_BULLETS];
     int num_bullets;
+    int num_bullets2;
     int width;
     int height;
     int health;
@@ -134,21 +147,23 @@ void Gamebackground_call(game_data* game, plane_data* plane);
 void draw_enemies(game_data* game);
 void draw_game(game_data* game, plane_data* plane);
 void draw_background(game_data* game);
-void draw_plane(plane_data* plane);
+void draw_plane(game_data *game, plane_data *plane);
 
-void cleanup(game_data* game);
+void cleanup(game_data *game);
 void cleanup_enemies(game_data* game);
 void cleanup_plane(plane_data*plane);
 
 void update_enemy_positions(game_data* game, plane_data* plane);
 void fire_bullet(enemy_data* enemy);
 void fire_plane_bullet(plane_data* plane);
+void fire_plane_bullet2(plane_data *plane);
 
 int initialize_all(game_data* game,plane_data* plane, int num_enemies);
 int initialize_game(game_data* game, int num_enemies);
 int initialize_enemies(enemy_data* enemies, int num_enemies, ALLEGRO_DISPLAY* display, ALLEGRO_EVENT_QUEUE* event_queue);
 void initialize_bullet(enemy_data* enemy, int index);
-void initialize_plane_bullet(plane_data* enemy, int index);
+void initialize_plane_bullet(plane_data *plane, int index);
+void initialize_plane_bullet2(plane_data *plane, int index);
 int initialize_plane(plane_data* plane);
 
 

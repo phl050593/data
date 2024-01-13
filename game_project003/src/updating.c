@@ -81,3 +81,28 @@ void fire_plane_bullet(plane_data* plane) {
     }
 }
 
+void fire_plane_bullet2(plane_data *plane)
+{
+    ALLEGRO_EVENT ev;
+    al_wait_for_event(plane->event_plane_bullet_queue2, &ev);
+
+    for (int j = 0; j < plane->num_bullets2; ++j)
+    {
+        plane->bullets2[j].y += plane->bullets2[j].vy;
+
+        if (plane->bullets2[j].y < 0)
+        {
+            al_destroy_bitmap(plane->bullets2[j].bullet);
+            plane->bullets2[j] = plane->bullets2[plane->num_bullets2 - 1];
+            plane->num_bullets2--;
+        }
+    }
+    if (ev.type == ALLEGRO_EVENT_TIMER && ev.timer.source == plane->plane_bullet_timer2)
+    {
+        if (plane->num_bullets2 < MAX_PLANE_BULLETS)
+        {
+            initialize_plane_bullet2(plane, plane->num_bullets2);
+            plane->num_bullets2++;
+        }
+    }
+}

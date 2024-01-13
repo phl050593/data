@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\git hub data\data\game_project003"
+CMAKE_SOURCE_DIR = C:\game_project00305
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\git hub data\data\game_project003\build"
+CMAKE_BINARY_DIR = C:\game_project00305\build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\git hub data\data\game_project003\build\CMakeFiles" "C:\git hub data\data\game_project003\build\\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\game_project00305\build\CMakeFiles C:\game_project00305\build\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\git hub data\data\game_project003\build\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\game_project00305\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -175,6 +175,30 @@ src/drawing.s: src/drawing.c.s
 src/drawing.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/drawing.c.s
 .PHONY : src/drawing.c.s
+
+src/fast_prototyping.obj: src/fast_prototyping.c.obj
+.PHONY : src/fast_prototyping.obj
+
+# target to build an object file
+src/fast_prototyping.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/fast_prototyping.c.obj
+.PHONY : src/fast_prototyping.c.obj
+
+src/fast_prototyping.i: src/fast_prototyping.c.i
+.PHONY : src/fast_prototyping.i
+
+# target to preprocess a source file
+src/fast_prototyping.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/fast_prototyping.c.i
+.PHONY : src/fast_prototyping.c.i
+
+src/fast_prototyping.s: src/fast_prototyping.c.s
+.PHONY : src/fast_prototyping.s
+
+# target to generate assembly for a file
+src/fast_prototyping.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/fast_prototyping.c.s
+.PHONY : src/fast_prototyping.c.s
 
 src/game_call.obj: src/game_call.c.obj
 .PHONY : src/game_call.obj
@@ -296,6 +320,30 @@ src/updating.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/updating.c.s
 .PHONY : src/updating.c.s
 
+src/weapon.obj: src/weapon.c.obj
+.PHONY : src/weapon.obj
+
+# target to build an object file
+src/weapon.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/weapon.c.obj
+.PHONY : src/weapon.c.obj
+
+src/weapon.i: src/weapon.c.i
+.PHONY : src/weapon.i
+
+# target to preprocess a source file
+src/weapon.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/weapon.c.i
+.PHONY : src/weapon.c.i
+
+src/weapon.s: src/weapon.c.s
+.PHONY : src/weapon.s
+
+# target to generate assembly for a file
+src/weapon.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/weapon.c.s
+.PHONY : src/weapon.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -311,6 +359,9 @@ help:
 	@echo ... src/drawing.obj
 	@echo ... src/drawing.i
 	@echo ... src/drawing.s
+	@echo ... src/fast_prototyping.obj
+	@echo ... src/fast_prototyping.i
+	@echo ... src/fast_prototyping.s
 	@echo ... src/game_call.obj
 	@echo ... src/game_call.i
 	@echo ... src/game_call.s
@@ -326,6 +377,9 @@ help:
 	@echo ... src/updating.obj
 	@echo ... src/updating.i
 	@echo ... src/updating.s
+	@echo ... src/weapon.obj
+	@echo ... src/weapon.i
+	@echo ... src/weapon.s
 .PHONY : help
 
 

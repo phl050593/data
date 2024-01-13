@@ -4,10 +4,10 @@ void draw_game(game_data* game, plane_data* plane) {
 
     draw_background(game);
     draw_enemies(game);
-    draw_plane(plane);
+    draw_plane(game,plane);
     al_draw_textf(game->Font, al_map_rgb(255, 255, 255), 75, 0, -1,"Player Score: %d", game->players[PLAYER_1].score);
     al_draw_textf(game->Font, al_map_rgb(255, 255, 255), 600, 0, -1,"Plane Health: %d", plane->health);
-    
+
 
     al_flip_display();
 }
@@ -50,11 +50,13 @@ void draw_enemies(game_data* game) {
     }
 }
 
-void draw_plane(plane_data* plane)
+void draw_plane(game_data *game,plane_data *plane)
 {
     al_draw_bitmap(plane->plane_img, plane->x, plane->y, 0);
 
-    for (int j = 0; j < plane->num_bullets; ++j) 
+    if (game->players[PLAYER_1].score < 40)
+    {
+        for (int j = 0; j < plane->num_bullets; ++j) 
         {
             al_draw_scaled_bitmap(
                 plane->bullets[j].bullet,
@@ -68,6 +70,24 @@ void draw_plane(plane_data* plane)
                 0
             );
         }
+    }
+
+    if (game->players[PLAYER_1].score >= 40)
+    {
+        for (int j = 0; j < plane->num_bullets2; ++j)
+        {
+            al_draw_scaled_bitmap(
+                plane->bullets2[j].bullet,
+                0, 0,
+                al_get_bitmap_width(plane->bullets2[j].bullet),
+                al_get_bitmap_height(plane->bullets2[j].bullet),
+                plane->bullets2[j].x,
+                plane->bullets2[j].y,
+                plane->bullets2[j].width,
+                plane->bullets2[j].height,
+                0);
+        }
+    }
 }
 
 void drawMenu(menu* button) {

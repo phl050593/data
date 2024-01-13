@@ -48,23 +48,23 @@ void menu_call() {
 }
 
 
-
-
-
-
 void Gamebackground_call(game_data* game, plane_data* plane) {
     al_play_sample_instance(game->background_music_instance);
     printf("gamebackground call\n");
-
     int isPaused = 0;
-    bool showImage = false;  
-
+    bool showImage = false; 
     while (1) {
         if (!isPaused) {
             update_enemy_positions(game, plane);
             draw_game(game, plane);
+        if (game->players[PLAYER_1].score < 40)
             fire_plane_bullet(plane);
+
+        if (game->players[PLAYER_1].score >= 40)
+            fire_plane_bullet2(plane);
+            
         }
+
 
         ALLEGRO_EVENT ev;
         ALLEGRO_EVENT plane_ev;
@@ -93,6 +93,6 @@ void Gamebackground_call(game_data* game, plane_data* plane) {
             }
         }
     }
-
     cleanup_enemies(game);
 }
+

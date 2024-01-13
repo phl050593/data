@@ -1,4 +1,5 @@
 #include "myheader.h"
+#include "weapon_data.h"
 
 int initialize_all(game_data* game, plane_data* plane, int num_enemies) {
     al_init_font_addon();
@@ -27,6 +28,7 @@ int initialize_all(game_data* game, plane_data* plane, int num_enemies) {
         return-1;
     }
 
+    
 
     return 0;
 }
@@ -100,10 +102,6 @@ int initialize_game(game_data* game, int num_enemies) {
     if (!game->event_queue) {
 
         return -1;
-    }
-    if (!game->pause_image) {
-
-        printf("load failed");
     }
 
     al_register_event_source(game->event_queue, al_get_display_event_source(game->display));
@@ -184,6 +182,16 @@ void initialize_plane_bullet(plane_data* plane, int index)
     
 }
 
+void initialize_plane_bullet2(plane_data *plane, int index)
+{
+    plane->bullets2[index].bullet = al_load_bitmap("ball.bmp");
+    plane->bullets2[index].x = plane->x + plane->width / 2;
+    plane->bullets2[index].y = plane->y + plane->height;
+    plane->bullets2[index].vy = -20.0;
+    plane->bullets2[index].width = 40;
+    plane->bullets2[index].height = 40;
+}
+
 int initialize_plane(plane_data* plane) {
     plane->health = 5;
     plane->x = SCREEN_W / 2;
@@ -192,12 +200,16 @@ int initialize_plane(plane_data* plane) {
     plane->plane_timer = al_create_timer(1.0 / 60);
     plane->event_plane_queue = al_create_event_queue(); 
     plane->event_plane_bullet_queue = al_create_event_queue(); 
+    plane->event_plane_bullet_queue2 = al_create_event_queue(); 
     plane->plane_bullet_timer = al_create_timer(PLANE_BULLET_UPDATE_TIMER);  // 請根據需要調整計時器間隔
+    plane->plane_bullet_timer2 = al_create_timer(PLANE_BULLET_UPDATE_TIMER);  // 根據需要調整
     al_register_event_source(plane->event_plane_queue, al_get_timer_event_source(plane->plane_timer));
     al_register_event_source(plane->event_plane_queue, al_get_keyboard_event_source());
     al_start_timer(plane->plane_timer);
     al_register_event_source(plane->event_plane_bullet_queue, al_get_timer_event_source(plane->plane_bullet_timer));
+    al_register_event_source(plane->event_plane_bullet_queue2, al_get_timer_event_source(plane->plane_bullet_timer2));
     al_start_timer(plane->plane_bullet_timer);
+    al_start_timer(plane->plane_bullet_timer2);
     
     return 0;
 }

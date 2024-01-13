@@ -1,7 +1,7 @@
 #include "myheader.h"
 
 void initPlayers(player_data *players, int nPlayer)
-{   
+{
     int i = 0;
     for (i = 0; i < nPlayer; ++i)
     {
@@ -37,27 +37,56 @@ void check_and_remove_bullet_collision(game_data *game, plane_data *plane)
         }
     }
 
-    for (int i = 0; i < plane->num_bullets; ++i)
+    if (playersPtr[PLAYER_1].score < 40)
     {
-        for (int j = 0; j < game->num_enemies; ++j)
+        for (int i = 0; i < plane->num_bullets; ++i)
         {
-            if(PLAYER_1 == 1){
-                if (check_collision(plane->bullets[i].x, plane->bullets[i].y,
-                                    plane->bullets[i].width, plane->bullets[i].height,
-                                    game->enemies[j].x, game->enemies[j].y,
-                                    game->enemies[j].width-20, game->enemies[j].height))
+            for (int j = 0; j < game->num_enemies; ++j)
+            {
+                if (PLAYER_1 == 0)
                 {
-                    al_destroy_bitmap(plane->bullets[i].bullet);
-                    plane->bullets[i] = plane->bullets[plane->num_bullets - 1];
-                    plane->num_bullets--;
-                    game->enemies[j].destroy_enemy++;
-                    playersPtr[PLAYER_1].score += 20;
-                    printf("enemy X POSITION=%f~%f\n", game->enemies[j].x, game->enemies[j].x + game->enemies[j].width);
-                    printf("enemy Y POSITION=%f~%f\n", game->enemies[j].y, game->enemies[j].y + game->enemies[j].height);
-                    printf("plane Bullet POSITION=(%f,%f)\n", plane->bullets[i].x, plane->bullets[i].y);
-                    printf("\n");
+                    if (check_collision(plane->bullets[i].x, plane->bullets[i].y,
+                                        plane->bullets[i].width, plane->bullets[i].height,
+                                        game->enemies[j].x, game->enemies[j].y,
+                                        game->enemies[j].width - 20, game->enemies[j].height))
+                    {
+                        al_destroy_bitmap(plane->bullets[i].bullet);
+                        plane->bullets[i] = plane->bullets[plane->num_bullets - 1];
+                        plane->num_bullets--;
+                        game->enemies[j].destroy_enemy++;
+                        playersPtr[PLAYER_1].score += 20;
+                        printf("enemy X POSITION=%f~%f\n", game->enemies[j].x, game->enemies[j].x + game->enemies[j].width);
+                        printf("enemy Y POSITION=%f~%f\n", game->enemies[j].y, game->enemies[j].y + game->enemies[j].height);
+                        printf("plane Bullet POSITION=(%f,%f)\n", plane->bullets[i].x, plane->bullets[i].y);
+                        printf("\n");
+                    }
                 }
-            }        
+            }
+        }
+    }
+
+    if (playersPtr[PLAYER_1].score >= 40)
+    {
+        for (int i = 0; i < plane->num_bullets2; ++i)
+        {
+            for (int j = 0; j < game->num_enemies; ++j)
+            {
+                if (PLAYER_1 == 0)
+                {
+                    if (check_collision(plane->bullets2[i].x, plane->bullets2[i].y,
+                                        plane->bullets2[i].width, plane->bullets2[i].height,
+                                        game->enemies[j].x, game->enemies[j].y,
+                                        game->enemies[j].width - 20, game->enemies[j].height))
+                    {
+                        al_destroy_bitmap(plane->bullets2[i].bullet);
+                        plane->bullets2[i] = plane->bullets2[plane->num_bullets2 - 1];
+                        plane->num_bullets2--;
+                        game->enemies[j].destroy_enemy=game->enemies[j].destroy_enemy+2;
+                        playersPtr[PLAYER_1].score += 20;
+                        
+                    }
+                }
+            }
         }
     }
 
@@ -81,7 +110,6 @@ void check_and_remove_bullet_collision(game_data *game, plane_data *plane)
         cleanup(game);
         cleanup_enemies(game);
         cleanup_plane(plane);
-        
     }
 
     if (plane->health == 1)

@@ -1,6 +1,6 @@
 CMakeFiles/YourProgram.dir/src/main.c.obj: \
-  C:/git\ hub\ data/data/game_project003/src/main.c \
-  C:/GITHUB~1/data/GAME_P~1/include/myheader.h \
+  C:/game_project00305/src/main.c \
+  C:/game_project00305/include/myheader.h \
   C:/llvm-mingw-20231114-msvcrt-x86_64/include/stdio.h \
   C:/llvm-mingw-20231114-msvcrt-x86_64/include/corecrt_stdio_config.h \
   C:/llvm-mingw-20231114-msvcrt-x86_64/include/corecrt.h \
@@ -94,5 +94,4 @@ CMakeFiles/YourProgram.dir/src/main.c.obj: \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_audio.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_acodec.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_font.h \
-  D:/AllegroLib_5.2.8/include/allegro5/allegro_ttf.h \
-  D:/AllegroLib_5.2.8/include/allegro5/allegro_native_dialog.h
+  D:/AllegroLib_5.2.8/include/allegro5/allegro_ttf.h

@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "myheader.h": "c",
+        "allegro_ttf.h": "c"
+    }
+}

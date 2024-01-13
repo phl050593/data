@@ -31,8 +31,13 @@ void cleanup_plane(plane_data*plane){
     for (int j = 0; j < plane->num_bullets; ++j) {
         al_destroy_bitmap(plane->bullets[j].bullet);
     }
-     al_destroy_timer(plane->plane_bullet_timer);
+    al_destroy_timer(plane->plane_bullet_timer);
 
+    for (int j = 0; j < plane->num_bullets2; ++j)
+    {
+        al_destroy_bitmap(plane->bullets2[j].bullet);
+    }
+    al_destroy_timer(plane->plane_bullet_timer2);
 }
 
 void cleanupMenu(menu* button) {

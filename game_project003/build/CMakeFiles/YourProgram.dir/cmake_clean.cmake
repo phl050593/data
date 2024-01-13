@@ -1,12 +1,14 @@
 file(REMOVE_RECURSE
-  "C:/git hub data/data/game_project003/YourProgram.exe"
-  "C:/git hub data/data/game_project003/YourProgram.exe.manifest"
-  "C:/git hub data/data/game_project003/YourProgram.pdb"
-  "C:/git hub data/data/game_project003/libYourProgram.dll.a"
+  "C:/game_project00305/YourProgram.exe"
+  "C:/game_project00305/YourProgram.exe.manifest"
+  "C:/game_project00305/YourProgram.pdb"
+  "C:/game_project00305/libYourProgram.dll.a"
   "CMakeFiles/YourProgram.dir/src/clean.c.obj"
   "CMakeFiles/YourProgram.dir/src/clean.c.obj.d"
   "CMakeFiles/YourProgram.dir/src/drawing.c.obj"
   "CMakeFiles/YourProgram.dir/src/drawing.c.obj.d"
+  "CMakeFiles/YourProgram.dir/src/fast_prototyping.c.obj"
+  "CMakeFiles/YourProgram.dir/src/fast_prototyping.c.obj.d"
   "CMakeFiles/YourProgram.dir/src/game_call.c.obj"
   "CMakeFiles/YourProgram.dir/src/game_call.c.obj.d"
   "CMakeFiles/YourProgram.dir/src/initialization.c.obj"
@@ -17,6 +19,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/YourProgram.dir/src/score.c.obj.d"
   "CMakeFiles/YourProgram.dir/src/updating.c.obj"
   "CMakeFiles/YourProgram.dir/src/updating.c.obj.d"
+  "CMakeFiles/YourProgram.dir/src/weapon.c.obj"
+  "CMakeFiles/YourProgram.dir/src/weapon.c.obj.d"
 )
 
 # Per-language clean rules from dependency scanning.
