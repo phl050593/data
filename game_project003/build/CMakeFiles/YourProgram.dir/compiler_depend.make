@@ -195,8 +195,6 @@ CMakeFiles/YourProgram.dir/src/drawing.c.obj: C:/git\ hub\ data/data/game_projec
   D:/AllegroLib_5.2.8/include/allegro5/transformations.h \
   D:/AllegroLib_5.2.8/include/allegro5/utf8.h
 
-CMakeFiles/YourProgram.dir/src/fast_prototyping.c.obj: C:/git\ hub\ data/data/game_project003/src/fast_prototyping.c
-
 CMakeFiles/YourProgram.dir/src/game_call.c.obj: C:/git\ hub\ data/data/game_project003/src/game_call.c \
   C:/git\ hub\ data/data/game_project003/include/myheader.h \
   C:/llvm-mingw-20231114-msvcrt-x86_64/include/_mingw.h \
@@ -296,7 +294,6 @@ CMakeFiles/YourProgram.dir/src/game_call.c.obj: C:/git\ hub\ data/data/game_proj
 
 CMakeFiles/YourProgram.dir/src/initialization.c.obj: C:/git\ hub\ data/data/game_project003/src/initialization.c \
   C:/git\ hub\ data/data/game_project003/include/myheader.h \
-  C:/git\ hub\ data/data/game_project003/include/weapon_data.h \
   C:/llvm-mingw-20231114-msvcrt-x86_64/include/_mingw.h \
   C:/llvm-mingw-20231114-msvcrt-x86_64/include/_mingw_mac.h \
   C:/llvm-mingw-20231114-msvcrt-x86_64/include/_mingw_off_t.h \
@@ -780,8 +777,6 @@ CMakeFiles/YourProgram.dir/src/updating.c.obj: C:/git\ hub\ data/data/game_proje
   D:/AllegroLib_5.2.8/include/allegro5/transformations.h \
   D:/AllegroLib_5.2.8/include/allegro5/utf8.h
 
-CMakeFiles/YourProgram.dir/src/weapon.c.obj: C:/git\ hub\ data/data/game_project003/src/weapon.c
-
 
 C:/git\ hub\ data/data/game_project003/src/clean.c:
 
@@ -979,18 +974,12 @@ D:/AllegroLib_5.2.8/include/allegro5/utf8.h:
 
 C:/git\ hub\ data/data/game_project003/src/drawing.c:
 
-C:/git\ hub\ data/data/game_project003/src/fast_prototyping.c:
-
 C:/git\ hub\ data/data/game_project003/src/game_call.c:
 
 C:/git\ hub\ data/data/game_project003/src/initialization.c:
-
-C:/git\ hub\ data/data/game_project003/include/weapon_data.h:
 
 C:/git\ hub\ data/data/game_project003/src/main.c:
 
 C:/git\ hub\ data/data/game_project003/src/score.c:
 
 C:/git\ hub\ data/data/game_project003/src/updating.c:
-
-C:/git\ hub\ data/data/game_project003/src/weapon.c:

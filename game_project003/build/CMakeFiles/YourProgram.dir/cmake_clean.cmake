@@ -7,8 +7,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/YourProgram.dir/src/clean.c.obj.d"
   "CMakeFiles/YourProgram.dir/src/drawing.c.obj"
   "CMakeFiles/YourProgram.dir/src/drawing.c.obj.d"
-  "CMakeFiles/YourProgram.dir/src/fast_prototyping.c.obj"
-  "CMakeFiles/YourProgram.dir/src/fast_prototyping.c.obj.d"
   "CMakeFiles/YourProgram.dir/src/game_call.c.obj"
   "CMakeFiles/YourProgram.dir/src/game_call.c.obj.d"
   "CMakeFiles/YourProgram.dir/src/initialization.c.obj"
@@ -21,8 +19,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/YourProgram.dir/src/spawnneweneimes.c.obj.d"
   "CMakeFiles/YourProgram.dir/src/updating.c.obj"
   "CMakeFiles/YourProgram.dir/src/updating.c.obj.d"
-  "CMakeFiles/YourProgram.dir/src/weapon.c.obj"
-  "CMakeFiles/YourProgram.dir/src/weapon.c.obj.d"
 )
 
 # Per-language clean rules from dependency scanning.

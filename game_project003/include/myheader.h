@@ -9,11 +9,19 @@
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_ttf.h>
 
+// Constants for screen dimensions
 #define SCREEN_W 700
 #define SCREEN_H 860
+
+// Maximum number of enemies and bullets
 #define MAX_ENEMIES 100
 #define MAX_BULLETS 70
+
+// Time intervals for bullet updates
 #define BULLET_UPDATE_TIMER 0.05
+#define PLANE_BULLET_UPDATE_TIMER 0.005
+
+// Other game-related constants
 #define NEW_ENEMY_COUNT 2
 #define BALL_SIZE 40
 #define PLANE_MOVE 20
@@ -24,16 +32,18 @@
 #define MAX_ENEMIES_LEVEL3 6
 #define MAX_ENEMIES_LEVEL4 8
 #define MAX_PLANE_BULLETS 1
-#define PLANE_BULLET_UPDATE_TIMER 0.005
 
+// Player-related constants
 #define PLAYER_1 0
-#define N_PLAYER 4 //先放著沒有用
+#define N_PLAYER 4 
 
+// Structure to hold player information
 typedef struct player_data {
     char name[20];
     int score;
 } player_data;
 
+// Structure to represent enemy bullets
 typedef struct enemy_bullet_data {
     float x;
     float y;
@@ -43,6 +53,7 @@ typedef struct enemy_bullet_data {
     int height;
 } enemy_bullet;
 
+// Structure to represent plane bullets
 typedef struct plane_bullet_data {
     float x;
     float y;
@@ -50,20 +61,19 @@ typedef struct plane_bullet_data {
     ALLEGRO_BITMAP* bullet;
     int width;
     int height;
- 
 } plane_bullet;
 
-typedef struct plane_bullet_data2
-{
+// Additional structure for a different type of plane bullet
+typedef struct plane_bullet_data2 {
     float x;
     float y;
     float vy;
     ALLEGRO_BITMAP *bullet;
     int width;
     int height;
-
 } plane_bullet2;
 
+// Structure to represent the player's plane
 typedef struct plane_data {
     float x;
     float y;
@@ -82,9 +92,9 @@ typedef struct plane_data {
     int width;
     int height;
     int health;
-    
 } plane_data;
 
+// Structure to represent enemy entities
 typedef struct enemy_data {
     float x;
     float y;
@@ -102,9 +112,9 @@ typedef struct enemy_data {
     int num_bullets;
     int hit_count;
     int destroy_enemy;
-    
 } enemy_data;
 
+// Structure to represent the overall game state
 typedef struct game_data {
     ALLEGRO_DISPLAY* display;
     ALLEGRO_BITMAP* background;
@@ -125,8 +135,8 @@ typedef struct game_data {
     ALLEGRO_FONT* level4_Font;
 } game_data;
 
-typedef struct menu
-{
+// Structure for the main menu
+typedef struct menu {
     ALLEGRO_DISPLAY* display;
     ALLEGRO_EVENT_QUEUE* event_queue;
     ALLEGRO_BITMAP* startGameImage;
@@ -150,25 +160,21 @@ typedef struct menu
     bool shouldExit;
 } menu;
 
+// Function declarations
 void initPlayers(player_data *players, int nPlayer);
-//void getScore(game_data *game_dataPtr, plane_data* planePtr, int player);
-
 void Gamebackground_call(game_data* game, plane_data* plane);
 void draw_enemies(game_data* game);
 void draw_game(game_data* game, plane_data* plane);
 void draw_background(game_data* game);
 void draw_plane(game_data *game, plane_data *plane);
 void drawlevel(game_data*game, int picture_number);
-
 void cleanup(game_data *game);
 void cleanup_enemies(game_data* game);
 void cleanup_plane(plane_data*plane);
-
 void update_enemy_positions(game_data* game, plane_data* plane);
 void fire_bullet(enemy_data* enemy);
 void fire_plane_bullet(plane_data* plane);
 void fire_plane_bullet2(plane_data *plane);
-
 int initialize_all(game_data* game,plane_data* plane, int num_enemies);
 int initialize_game(game_data* game, int num_enemies);
 int initialize_enemies(enemy_data* enemies, int num_enemies, ALLEGRO_DISPLAY* display, ALLEGRO_EVENT_QUEUE* event_queue);
@@ -176,24 +182,17 @@ void initialize_bullet(enemy_data* enemy, int index);
 void initialize_plane_bullet(plane_data *plane, int index);
 void initialize_plane_bullet2(plane_data *plane, int index);
 int initialize_plane(plane_data* plane);
-
-
-
 int initializeButton(menu* button);
 void drawMenu(menu* button);
 void cleanupMenu(menu* button);
 void handleInput(ALLEGRO_EVENT *ev, menu *button, game_data *game);
 void menu_call();
-
-
 void movePlane(plane_data* plane, const ALLEGRO_KEYBOARD_EVENT* kbEvent);
-
 int check_collision(float x1, float y1, int w1, int h1, float x2, float y2, int w2, int h2);
-
 void check_and_remove_bullet_collision(game_data* game, plane_data* plane);
 int check_collision_with_existing(game_data* game, enemy_data* new_enemy);
-
 void spawn_new_enemies(game_data* game);
 void spawn_new_enemies2(game_data* game);
 void spawn_new_enemies3(game_data* game);
+
 #endif // _MYHEADER_H_

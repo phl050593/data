@@ -94,5 +94,4 @@ CMakeFiles/YourProgram.dir/src/initialization.c.obj: \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_audio.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_acodec.h \
   D:/AllegroLib_5.2.8/include/allegro5/allegro_font.h \
-  D:/AllegroLib_5.2.8/include/allegro5/allegro_ttf.h \
-  C:/GITHUB~1/data/GAME_P~1/include/weapon_data.h
+  D:/AllegroLib_5.2.8/include/allegro5/allegro_ttf.h
