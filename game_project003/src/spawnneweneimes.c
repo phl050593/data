@@ -4,7 +4,7 @@
 void spawn_new_enemies(game_data* game) {
     // Reset the destroy_enemy flag for enemies in the array
     for (int i = 0; i < MAX_ENEMIES_LEVEL2; i++) {
-        game->enemies[i].destroy_enemy = 0;
+        game->enemies[i].destroy_enemy = 1;
     }
 
     // Attempt to spawn NEW_ENEMY_COUNT new enemies
@@ -13,7 +13,7 @@ void spawn_new_enemies(game_data* game) {
         if (game->num_enemies < MAX_ENEMIES_LEVEL2) {
             // Initialize a new enemy
             initialize_enemies(&game->enemies[game->num_enemies], 1, game->display, game->event_queue);
-
+            
             // Ensure the new enemy does not collide with existing enemies
             while (check_collision_with_existing(game, &game->enemies[game->num_enemies])) {
                 int width = 80;
@@ -44,6 +44,7 @@ void spawn_new_enemies(game_data* game) {
             }
         }
     }
+    
 }
 
 // Function to spawn new enemies for level 2
@@ -96,7 +97,7 @@ void spawn_new_enemies2(game_data* game) {
 void spawn_new_enemies3(game_data* game) {
     // Reset the destroy_enemy flag for enemies in the array
     for (int i = 0; i < MAX_ENEMIES_LEVEL4; i++) {
-        game->enemies[i].destroy_enemy = 0;
+        game->enemies[i].destroy_enemy = -8;
     }
 
     // Attempt to spawn NEW_ENEMY_COUNT new enemies

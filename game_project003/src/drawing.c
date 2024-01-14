@@ -50,7 +50,7 @@ void draw_enemies(game_data* game) {
 void draw_plane(game_data* game, plane_data* plane) {
     al_draw_bitmap(plane->plane_img, plane->x, plane->y, 0);
 
-    if (game->players[PLAYER_1].score < 680) {
+    if (game->players[PLAYER_1].score < 560) {
         for (int j = 0; j < plane->num_bullets; ++j) {
             al_draw_scaled_bitmap(
                 plane->bullets[j].bullet,
@@ -66,7 +66,7 @@ void draw_plane(game_data* game, plane_data* plane) {
         }
     }
 
-    if (game->players[PLAYER_1].score >= 680) {
+    if (game->players[PLAYER_1].score >= 560) {
         for (int j = 0; j < plane->num_bullets2; ++j) {
             al_draw_scaled_bitmap(
                 plane->bullets2[j].bullet,

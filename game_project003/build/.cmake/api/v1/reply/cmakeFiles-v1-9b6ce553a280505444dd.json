@@ -822,8 +822,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "C:/git hub data/data/game_project003/build",
-		"source" : "C:/git hub data/data/game_project003"
+		"build" : "C:/git hub data/game_project003/build",
+		"source" : "C:/git hub data/game_project003"
 	},
 	"version" : 
 	{

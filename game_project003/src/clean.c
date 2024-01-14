@@ -3,7 +3,6 @@
 // Function to clean up game-related resources
 void cleanup(game_data* game) {
     al_destroy_bitmap(game->background);
-    al_destroy_display(game->display);
     al_destroy_event_queue(game->event_queue);
     al_destroy_sample(game->background_music);
 }
@@ -50,6 +49,5 @@ void cleanupMenu(menu* button) {
     al_destroy_bitmap(button->startGameImage);
     al_destroy_bitmap(button->exitGameImage);
     al_destroy_bitmap(button->illustrateImage);
-    al_destroy_display(button->display);
     al_destroy_event_queue(button->event_queue);
 }

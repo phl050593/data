@@ -1,14 +1,14 @@
 #include "myheader.h"
 
 // Update the positions of enemies and handle their bullet firing
-void update_enemy_positions(game_data* game, plane_data* plane) {
+void update_enemy_positions(game_data* game, plane_data* plane,ALLEGRO_DISPLAY* display) {
     for (int i = 0; i < game->num_enemies; ++i) {
         // Move enemies based on their velocity
         game->enemies[i].x += game->enemies[i].vx;
         game->enemies[i].y += game->enemies[i].vy;
 
         // Bounce off the screen edges
-        if (game->enemies[i].x < 0 || game->enemies[i].x + game->enemies[i].width > SCREEN_W) {
+        if (game->enemies[i].x < 0 || game->enemies[i].x + game->enemies[i].width > SCREEN_W ) {
             game->enemies[i].vx = -game->enemies[i].vx;
         }
 
@@ -38,7 +38,7 @@ void update_enemy_positions(game_data* game, plane_data* plane) {
         }
     }
     // Check and handle collisions between bullets and the player's plane
-    check_and_remove_bullet_collision(game, plane);
+    check_and_remove_bullet_collision(game, plane,display);
 }
 
 // Move the player's plane based on keyboard input

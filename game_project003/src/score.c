@@ -20,7 +20,7 @@ int check_collision(float x1, float y1, int w1, int h1, float x2, float y2, int 
 }
 
 // Function to check and handle collisions between bullets and enemies/planes
-void check_and_remove_bullet_collision(game_data *game, plane_data *plane)
+void check_and_remove_bullet_collision(game_data *game, plane_data *plane,ALLEGRO_DISPLAY* display)
 {
     player_data *playersPtr = game->players;
 
@@ -47,7 +47,7 @@ void check_and_remove_bullet_collision(game_data *game, plane_data *plane)
     }
 
     // Check collision between player's bullets and enemies
-    if (playersPtr[PLAYER_1].score < 680)
+    if (playersPtr[PLAYER_1].score < 560)
     {
         for (int i = 0; i < plane->num_bullets; ++i)
         {
@@ -57,8 +57,8 @@ void check_and_remove_bullet_collision(game_data *game, plane_data *plane)
                 {
                     if (check_collision(plane->bullets[i].x, plane->bullets[i].y,
                                         plane->bullets[i].width, plane->bullets[i].height,
-                                        game->enemies[j].x, game->enemies[j].y,
-                                        game->enemies[j].width - 40, game->enemies[j].height - 40))
+                                        game->enemies[j].x+20, game->enemies[j].y,
+                                        game->enemies[j].width - 40, game->enemies[j].height-40))
                     {
                         // Remove bullet upon collision
                         al_destroy_bitmap(plane->bullets[i].bullet);
@@ -80,7 +80,7 @@ void check_and_remove_bullet_collision(game_data *game, plane_data *plane)
     }
 
     // Check collision between player's bullets (level 2) and enemies
-    if (playersPtr[PLAYER_1].score >= 680)
+    if (playersPtr[PLAYER_1].score >= 560)
     {
         for (int i = 0; i < plane->num_bullets2; ++i)
         {
@@ -90,7 +90,7 @@ void check_and_remove_bullet_collision(game_data *game, plane_data *plane)
                 {
                     if (check_collision(plane->bullets2[i].x, plane->bullets2[i].y,
                                         plane->bullets2[i].width, plane->bullets2[i].height,
-                                        game->enemies[j].x, game->enemies[j].y,
+                                        game->enemies[j].x, game->enemies[j].y-20,
                                         game->enemies[j].width - 20, game->enemies[j].height))
                     {
                         // Remove bullet upon collision
@@ -131,12 +131,12 @@ void check_and_remove_bullet_collision(game_data *game, plane_data *plane)
         spawn_new_enemies(game);
     }
 
-    if (playersPtr[PLAYER_1].score == 440)
+    if (playersPtr[PLAYER_1].score == 320)
     {
         spawn_new_enemies2(game);
     }
 
-    if (playersPtr[PLAYER_1].score == 680)
+    if (playersPtr[PLAYER_1].score == 560)
     {
         spawn_new_enemies3(game);
     }
@@ -149,6 +149,7 @@ void check_and_remove_bullet_collision(game_data *game, plane_data *plane)
         cleanup(game);
         cleanup_enemies(game);
         cleanup_plane(plane);
+        al_destroy_display(display);
     }
 
     if (plane->health <= 0)
@@ -158,5 +159,6 @@ void check_and_remove_bullet_collision(game_data *game, plane_data *plane)
         cleanup(game);
         cleanup_enemies(game);
         cleanup_plane(plane);
+        al_destroy_display(display);
     }
 }

@@ -5,9 +5,13 @@ void menu_call() {
     game_data game;
     plane_data plane;
     menu button;
+    if (!al_init() || !al_init_image_addon() || !al_install_audio() || !al_init_acodec_addon() || !al_install_keyboard()) {
+        printf("Initialization failed\n");
+    }
 
+    ALLEGRO_DISPLAY* display = al_create_display(SCREEN_W, SCREEN_H);
     // Initialize the menu buttons
-    if (initializeButton(&button) != 0) {
+    if (initializeButton(&button,display) != 0) {
         fprintf(stderr, "Initialization failed!\n");
         return;
     }
@@ -26,11 +30,11 @@ void menu_call() {
             // If the start button is pressed, switch to the game
             if (button.isPressed) {
                 cleanupMenu(&button);
-                initialize_all(&game, &plane, 5);
+                initialize_all(&game, &plane, 5,display);
                 game.Font = NULL;
                 game.Font = al_load_ttf_font("assets/arial.ttf", 16, 0);
                 printf("Switching to game\n");
-                Gamebackground_call(&game, &plane);
+                Gamebackground_call(&game, &plane,display);
                 cleanup(&game);
                 cleanup_enemies(&game);
                 cleanup_plane(&plane);
@@ -51,7 +55,7 @@ void menu_call() {
 }
 
 // Function to handle the game background and player interactions
-void Gamebackground_call(game_data* game, plane_data* plane) {
+void Gamebackground_call(game_data* game, plane_data* plane,ALLEGRO_DISPLAY* display) {
     player_data *playersPtr = game->players;
     al_play_sample_instance(game->background_music_instance);
     printf("gamebackground call\n");
@@ -61,13 +65,13 @@ void Gamebackground_call(game_data* game, plane_data* plane) {
     // Main loop for the game background
     while (1) {
         if (!isPaused) {
-            update_enemy_positions(game, plane);
+            update_enemy_positions(game, plane,display);
             draw_game(game, plane);
 
             // Fire different bullets based on the player's score
-            if (game->players[PLAYER_1].score < 680)
+            if (game->players[PLAYER_1].score < 560)
                 fire_plane_bullet(plane);
-            if (game->players[PLAYER_1].score >= 680)
+            if (game->players[PLAYER_1].score >= 560)
                 fire_plane_bullet2(plane);
         }
 
@@ -75,13 +79,13 @@ void Gamebackground_call(game_data* game, plane_data* plane) {
         if (playersPtr[PLAYER_1].score < 200) {
             drawlevel(game, 3);
         }
-        if (playersPtr[PLAYER_1].score > 200 && playersPtr[PLAYER_1].score < 440) {
+        if (playersPtr[PLAYER_1].score >= 200 && playersPtr[PLAYER_1].score < 320) {
             drawlevel(game, 4);
         }
-        if (playersPtr[PLAYER_1].score > 440 && playersPtr[PLAYER_1].score < 680) {
+        if (playersPtr[PLAYER_1].score >= 320 && playersPtr[PLAYER_1].score < 560) {
             drawlevel(game, 5);
         }
-        if (playersPtr[PLAYER_1].score > 680) {
+        if (playersPtr[PLAYER_1].score >= 560) {
             drawlevel(game, 6);
         }
 
@@ -119,4 +123,5 @@ void Gamebackground_call(game_data* game, plane_data* plane) {
 
     // Cleanup after exiting the game loop
     cleanup_enemies(game);
+    al_destroy_display(display);
 }

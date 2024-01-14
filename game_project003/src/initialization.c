@@ -1,21 +1,18 @@
 #include "myheader.h"
 
 // Function to initialize Allegro, fonts, images, audio, and keyboard
-int initialize_all(game_data* game, plane_data* plane, int num_enemies) {
+int initialize_all(game_data* game, plane_data* plane, int num_enemies,ALLEGRO_DISPLAY* display) {
     al_init_font_addon();
     al_init_ttf_addon();
 
-    if (!al_init() || !al_init_image_addon() || !al_install_audio() || !al_init_acodec_addon() || !al_install_keyboard()) {
-        printf("Initialization failed\n");
-        return -1;
-    }
+
 
     if (!al_reserve_samples(2)) {
         printf("Audio sample reservation failed\n");
         return -1;
     }
 
-    if (initialize_game(game, num_enemies) != 0) {
+    if (initialize_game(game, num_enemies, display) != 0) {
         printf("Game initialization failed\n");
         return -1;
     }
@@ -34,7 +31,7 @@ int initialize_all(game_data* game, plane_data* plane, int num_enemies) {
 }
 
 // Function to initialize menu buttons, fonts, display, images, and event queue
-int initializeButton(menu* button) {
+int initializeButton(menu* button,ALLEGRO_DISPLAY* display) {
     al_init_font_addon();
     al_init_ttf_addon();
 
@@ -43,7 +40,7 @@ int initializeButton(menu* button) {
         return -1;
     }
 
-    button->display = al_create_display(SCREEN_W, SCREEN_H);
+    button->display = display;
     button->menuBackgroundImage = al_load_bitmap("./starry_sky1.jpg");
 
     if (!button->display || !button->menuBackgroundImage) {
@@ -92,8 +89,8 @@ int initializeButton(menu* button) {
 }
 
 // Function to initialize game data including display, background, fonts, and event queue
-int initialize_game(game_data* game, int num_enemies) {
-    game->display = al_create_display(SCREEN_W, SCREEN_H);
+int initialize_game(game_data* game, int num_enemies,ALLEGRO_DISPLAY* display) {
+    game->display = display;
     game->background = al_load_bitmap("./starry_sky1.jpg");
     game->pause_image = al_load_bitmap("./pause.jpg");
     game->win_image = al_load_bitmap("./win.png");
@@ -205,11 +202,11 @@ void initialize_plane_bullet(plane_data* plane, int index) {
 // Function to initialize second type of bullet properties for player's plane
 void initialize_plane_bullet2(plane_data* plane, int index) {
     plane->bullets2[index].bullet = al_load_bitmap("ball.bmp");
-    plane->bullets2[index].x = plane->x + plane->width / 2;
+    plane->bullets2[index].x = plane->x + plane->width / 2-20;
     plane->bullets2[index].y = plane->y + plane->height;
     plane->bullets2[index].vy = -20.0;
-    plane->bullets2[index].width = 40;
-    plane->bullets2[index].height = 40;
+    plane->bullets2[index].width = 80;
+    plane->bullets2[index].height = 80;
 }
 
 // Function to initialize player's plane properties
