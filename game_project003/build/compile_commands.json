@@ -43,6 +43,12 @@
 },
 {
   "directory": "C:/git hub data/data/game_project003/build",
+  "command": "C:\\llvm-mingw-20231114-msvcrt-x86_64\\bin\\clang.exe  @CMakeFiles/YourProgram.dir/includes_C.rsp -g -o CMakeFiles\\YourProgram.dir\\src\\spawnneweneimes.c.obj -c \"C:\\git hub data\\data\\game_project003\\src\\spawnneweneimes.c\"",
+  "file": "C:/git hub data/data/game_project003/src/spawnneweneimes.c",
+  "output": "CMakeFiles/YourProgram.dir/src/spawnneweneimes.c.obj"
+},
+{
+  "directory": "C:/git hub data/data/game_project003/build",
   "command": "C:\\llvm-mingw-20231114-msvcrt-x86_64\\bin\\clang.exe  @CMakeFiles/YourProgram.dir/includes_C.rsp -g -o CMakeFiles\\YourProgram.dir\\src\\updating.c.obj -c \"C:\\git hub data\\data\\game_project003\\src\\updating.c\"",
   "file": "C:/git hub data/data/game_project003/src/updating.c",
   "output": "CMakeFiles/YourProgram.dir/src/updating.c.obj"

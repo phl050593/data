@@ -71,8 +71,16 @@ if (!al_init() || !al_init_image_addon()) {
         fprintf(stderr, "Failed to load illustrate image!\n");
         return -1;
     }
-    button->illustrateX = (SCREEN_W - al_get_bitmap_width(button->exitGameImage)) / 2.0;
-    button->illustrateY = (SCREEN_H - al_get_bitmap_height(button->exitGameImage)) / 2.0 +100;
+    button->illustrateX = (SCREEN_W - al_get_bitmap_width(button->illustrateImage)) / 2.0;
+    button->illustrateY = (SCREEN_H - al_get_bitmap_height(button->illustrateImage)) / 2.0 +100;
+
+    button->nameImage=al_load_bitmap("./name.png");
+    if (!button->nameImage) {
+        fprintf(stderr, "Failed to load name image!\n");
+        return -1;
+    }
+    button->nameX = (SCREEN_W - al_get_bitmap_width(button->nameImage)) / 2.0;
+    button->nameY = (SCREEN_H - al_get_bitmap_height(button->nameImage)) / 2.0 +100;
     
     button->event_queue = al_create_event_queue();
     if (!button->event_queue) {
@@ -93,6 +101,17 @@ int initialize_game(game_data* game, int num_enemies) {
     game->display = al_create_display(SCREEN_W, SCREEN_H);
     game->background = al_load_bitmap("./starry_sky1.jpg");
     game->pause_image = al_load_bitmap("./pause.jpg");
+    game->win_image = al_load_bitmap("./win.png");
+    game->lose_image = al_load_bitmap("./lose.png");
+    game->level1_Font = NULL;
+    game->level1_Font = al_load_ttf_font("assets/arial.ttf", 20, 0);
+    game->level2_Font = NULL;
+    game->level2_Font = al_load_ttf_font("assets/arial.ttf", 20, 0);
+    game->level3_Font = NULL;
+    game->level3_Font = al_load_ttf_font("assets/arial.ttf", 20, 0);
+    game->level4_Font = NULL;
+    game->level4_Font = al_load_ttf_font("assets/arial.ttf", 20, 0);
+
 
     if (!game->display || !game->background) {
         return -1;
@@ -123,6 +142,7 @@ int initialize_enemies(enemy_data* enemies, int num_enemies, ALLEGRO_DISPLAY* di
     srand(time(NULL));
     
     for (int i = 0; i < num_enemies; ++i) {
+        
         enemies[i].enemy_display = display;
         enemies[i].enemy_pic = al_load_bitmap("./enemy.png");
 

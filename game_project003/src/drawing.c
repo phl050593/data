@@ -54,7 +54,7 @@ void draw_plane(game_data *game,plane_data *plane)
 {
     al_draw_bitmap(plane->plane_img, plane->x, plane->y, 0);
 
-    if (game->players[PLAYER_1].score < 320)
+    if (game->players[PLAYER_1].score < 680)
     {
         for (int j = 0; j < plane->num_bullets; ++j) 
         {
@@ -72,7 +72,7 @@ void draw_plane(game_data *game,plane_data *plane)
         }
     }
 
-    if (game->players[PLAYER_1].score >= 320)
+    if (game->players[PLAYER_1].score >= 680)
     {
         for (int j = 0; j < plane->num_bullets2; ++j)
         {
@@ -116,12 +116,59 @@ void drawMenu(menu* button) {
 
     int illustrateWidth = al_get_bitmap_width(button->illustrateImage);
     int illustrateHeight = al_get_bitmap_height(button->illustrateImage);
-    float illustrateX = (SCREEN_W - exitWidth) / 2.0 - 200.0;
-    float illustrateY = (SCREEN_H - exitHeight) / 2.0 + 150.0;
+    float illustrateX = (SCREEN_W - illustrateWidth) / 2.0;
+    float illustrateY = (SCREEN_H - illustrateHeight) / 2.0+250;
 
     al_draw_bitmap(button->illustrateImage, illustrateX, illustrateY, 0);
 
+    int nameWidth = al_get_bitmap_width(button->nameImage);
+    int nameHeight = al_get_bitmap_height(button->nameImage);
+    float nameX = (SCREEN_W - nameWidth) / 2.0;
+    float nameY = (SCREEN_H - nameHeight) / 2.0-250;
+
+    al_draw_bitmap(button->nameImage, nameX, nameY, 0);
 
 
-    al_flip_display();
+
+    al_flip_display(); 
+}
+
+void drawlevel(game_data*game, int picture_number){
+    switch (picture_number)
+    {
+    case 1:
+        al_draw_bitmap(game->win_image, 0, 0, 0 );
+        al_flip_display();
+        al_rest(2.0);
+        break;
+    case 2:
+        al_draw_bitmap(game->lose_image, 0, 0, 0 );
+        al_flip_display();
+        al_rest(2.0);
+        break;
+    case 3:
+        al_draw_textf(game->level1_Font, al_map_rgb(255, 255, 255), 350, 0, -1,"LEVEL 1");
+        al_flip_display();
+
+        break;
+    case 4:
+        al_draw_textf(game->level2_Font, al_map_rgb(255, 255, 255), 350, 0, -1,"LEVEL 2");
+        al_flip_display();
+       
+        break;
+    case 5:
+        al_draw_textf(game->level2_Font, al_map_rgb(255, 255, 255), 350, 0, -1,"LEVEL 3");
+        al_flip_display();
+        
+        break;
+    case 6:
+        al_draw_textf(game->level2_Font, al_map_rgb(255, 255, 255), 350, 0, -1,"LEVEL 4");
+        al_flip_display();
+
+        break;
+    default:
+        printf("drawlevel failed\n");
+        break;
+    }
+
 }

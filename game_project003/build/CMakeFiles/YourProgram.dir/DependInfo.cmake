@@ -15,6 +15,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/git hub data/data/game_project003/src/initialization.c" "CMakeFiles/YourProgram.dir/src/initialization.c.obj" "gcc" "CMakeFiles/YourProgram.dir/src/initialization.c.obj.d"
   "C:/git hub data/data/game_project003/src/main.c" "CMakeFiles/YourProgram.dir/src/main.c.obj" "gcc" "CMakeFiles/YourProgram.dir/src/main.c.obj.d"
   "C:/git hub data/data/game_project003/src/score.c" "CMakeFiles/YourProgram.dir/src/score.c.obj" "gcc" "CMakeFiles/YourProgram.dir/src/score.c.obj.d"
+  "C:/git hub data/data/game_project003/src/spawnneweneimes.c" "CMakeFiles/YourProgram.dir/src/spawnneweneimes.c.obj" "gcc" "CMakeFiles/YourProgram.dir/src/spawnneweneimes.c.obj.d"
   "C:/git hub data/data/game_project003/src/updating.c" "CMakeFiles/YourProgram.dir/src/updating.c.obj" "gcc" "CMakeFiles/YourProgram.dir/src/updating.c.obj.d"
   "C:/git hub data/data/game_project003/src/weapon.c" "CMakeFiles/YourProgram.dir/src/weapon.c.obj" "gcc" "CMakeFiles/YourProgram.dir/src/weapon.c.obj.d"
   )

@@ -21,7 +21,8 @@
 #define PLANE_MAX 700
 #define PLANE_SIZE 40
 #define MAX_ENEMIES_LEVEL2 6
-#define MAX_ENEMIES_LEVEL3 8
+#define MAX_ENEMIES_LEVEL3 6
+#define MAX_ENEMIES_LEVEL4 8
 #define MAX_PLANE_BULLETS 1
 #define PLANE_BULLET_UPDATE_TIMER 0.005
 
@@ -116,6 +117,12 @@ typedef struct game_data {
     ALLEGRO_FONT *Font;
     player_data players[N_PLAYER];
     ALLEGRO_BITMAP* pause_image;
+    ALLEGRO_BITMAP* win_image;
+    ALLEGRO_BITMAP* lose_image;
+    ALLEGRO_FONT* level1_Font;
+    ALLEGRO_FONT* level2_Font;
+    ALLEGRO_FONT* level3_Font;
+    ALLEGRO_FONT* level4_Font;
 } game_data;
 
 typedef struct menu
@@ -126,7 +133,9 @@ typedef struct menu
     ALLEGRO_BITMAP* exitGameImage;
     ALLEGRO_BITMAP* menuBackgroundImage;
     ALLEGRO_BITMAP* illustrateImage;
-    
+    ALLEGRO_BITMAP* nameImage;
+    float nameX;
+    float nameY;
     float illustrateX;
     float illustrateY;
     float startX;
@@ -149,6 +158,7 @@ void draw_enemies(game_data* game);
 void draw_game(game_data* game, plane_data* plane);
 void draw_background(game_data* game);
 void draw_plane(game_data *game, plane_data *plane);
+void drawlevel(game_data*game, int picture_number);
 
 void cleanup(game_data *game);
 void cleanup_enemies(game_data* game);

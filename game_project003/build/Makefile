@@ -296,6 +296,30 @@ src/score.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/score.c.s
 .PHONY : src/score.c.s
 
+src/spawnneweneimes.obj: src/spawnneweneimes.c.obj
+.PHONY : src/spawnneweneimes.obj
+
+# target to build an object file
+src/spawnneweneimes.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/spawnneweneimes.c.obj
+.PHONY : src/spawnneweneimes.c.obj
+
+src/spawnneweneimes.i: src/spawnneweneimes.c.i
+.PHONY : src/spawnneweneimes.i
+
+# target to preprocess a source file
+src/spawnneweneimes.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/spawnneweneimes.c.i
+.PHONY : src/spawnneweneimes.c.i
+
+src/spawnneweneimes.s: src/spawnneweneimes.c.s
+.PHONY : src/spawnneweneimes.s
+
+# target to generate assembly for a file
+src/spawnneweneimes.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/spawnneweneimes.c.s
+.PHONY : src/spawnneweneimes.c.s
+
 src/updating.obj: src/updating.c.obj
 .PHONY : src/updating.obj
 
@@ -374,6 +398,9 @@ help:
 	@echo ... src/score.obj
 	@echo ... src/score.i
 	@echo ... src/score.s
+	@echo ... src/spawnneweneimes.obj
+	@echo ... src/spawnneweneimes.i
+	@echo ... src/spawnneweneimes.s
 	@echo ... src/updating.obj
 	@echo ... src/updating.i
 	@echo ... src/updating.s

@@ -173,11 +173,26 @@ CMakeFiles/YourProgram.dir/src/score.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/YourProgram.dir/src/score.c.s"
 	C:\llvm-mingw-20231114-msvcrt-x86_64\bin\clang.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\git hub data\data\game_project003\src\score.c" -o CMakeFiles\YourProgram.dir\src\score.c.s
 
+CMakeFiles/YourProgram.dir/src/spawnneweneimes.c.obj: CMakeFiles/YourProgram.dir/flags.make
+CMakeFiles/YourProgram.dir/src/spawnneweneimes.c.obj: CMakeFiles/YourProgram.dir/includes_C.rsp
+CMakeFiles/YourProgram.dir/src/spawnneweneimes.c.obj: C:/git\ hub\ data/data/game_project003/src/spawnneweneimes.c
+CMakeFiles/YourProgram.dir/src/spawnneweneimes.c.obj: CMakeFiles/YourProgram.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\git hub data\data\game_project003\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/YourProgram.dir/src/spawnneweneimes.c.obj"
+	C:\llvm-mingw-20231114-msvcrt-x86_64\bin\clang.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/YourProgram.dir/src/spawnneweneimes.c.obj -MF CMakeFiles\YourProgram.dir\src\spawnneweneimes.c.obj.d -o CMakeFiles\YourProgram.dir\src\spawnneweneimes.c.obj -c "C:\git hub data\data\game_project003\src\spawnneweneimes.c"
+
+CMakeFiles/YourProgram.dir/src/spawnneweneimes.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/YourProgram.dir/src/spawnneweneimes.c.i"
+	C:\llvm-mingw-20231114-msvcrt-x86_64\bin\clang.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\git hub data\data\game_project003\src\spawnneweneimes.c" > CMakeFiles\YourProgram.dir\src\spawnneweneimes.c.i
+
+CMakeFiles/YourProgram.dir/src/spawnneweneimes.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/YourProgram.dir/src/spawnneweneimes.c.s"
+	C:\llvm-mingw-20231114-msvcrt-x86_64\bin\clang.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\git hub data\data\game_project003\src\spawnneweneimes.c" -o CMakeFiles\YourProgram.dir\src\spawnneweneimes.c.s
+
 CMakeFiles/YourProgram.dir/src/updating.c.obj: CMakeFiles/YourProgram.dir/flags.make
 CMakeFiles/YourProgram.dir/src/updating.c.obj: CMakeFiles/YourProgram.dir/includes_C.rsp
 CMakeFiles/YourProgram.dir/src/updating.c.obj: C:/git\ hub\ data/data/game_project003/src/updating.c
 CMakeFiles/YourProgram.dir/src/updating.c.obj: CMakeFiles/YourProgram.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\git hub data\data\game_project003\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/YourProgram.dir/src/updating.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\git hub data\data\game_project003\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/YourProgram.dir/src/updating.c.obj"
 	C:\llvm-mingw-20231114-msvcrt-x86_64\bin\clang.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/YourProgram.dir/src/updating.c.obj -MF CMakeFiles\YourProgram.dir\src\updating.c.obj.d -o CMakeFiles\YourProgram.dir\src\updating.c.obj -c "C:\git hub data\data\game_project003\src\updating.c"
 
 CMakeFiles/YourProgram.dir/src/updating.c.i: cmake_force
@@ -192,7 +207,7 @@ CMakeFiles/YourProgram.dir/src/weapon.c.obj: CMakeFiles/YourProgram.dir/flags.ma
 CMakeFiles/YourProgram.dir/src/weapon.c.obj: CMakeFiles/YourProgram.dir/includes_C.rsp
 CMakeFiles/YourProgram.dir/src/weapon.c.obj: C:/git\ hub\ data/data/game_project003/src/weapon.c
 CMakeFiles/YourProgram.dir/src/weapon.c.obj: CMakeFiles/YourProgram.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\git hub data\data\game_project003\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/YourProgram.dir/src/weapon.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\git hub data\data\game_project003\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/YourProgram.dir/src/weapon.c.obj"
 	C:\llvm-mingw-20231114-msvcrt-x86_64\bin\clang.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/YourProgram.dir/src/weapon.c.obj -MF CMakeFiles\YourProgram.dir\src\weapon.c.obj.d -o CMakeFiles\YourProgram.dir\src\weapon.c.obj -c "C:\git hub data\data\game_project003\src\weapon.c"
 
 CMakeFiles/YourProgram.dir/src/weapon.c.i: cmake_force
@@ -212,6 +227,7 @@ YourProgram_OBJECTS = \
 "CMakeFiles/YourProgram.dir/src/initialization.c.obj" \
 "CMakeFiles/YourProgram.dir/src/main.c.obj" \
 "CMakeFiles/YourProgram.dir/src/score.c.obj" \
+"CMakeFiles/YourProgram.dir/src/spawnneweneimes.c.obj" \
 "CMakeFiles/YourProgram.dir/src/updating.c.obj" \
 "CMakeFiles/YourProgram.dir/src/weapon.c.obj"
 
@@ -225,6 +241,7 @@ C:/git\ hub\ data/data/game_project003/YourProgram.exe: CMakeFiles/YourProgram.d
 C:/git\ hub\ data/data/game_project003/YourProgram.exe: CMakeFiles/YourProgram.dir/src/initialization.c.obj
 C:/git\ hub\ data/data/game_project003/YourProgram.exe: CMakeFiles/YourProgram.dir/src/main.c.obj
 C:/git\ hub\ data/data/game_project003/YourProgram.exe: CMakeFiles/YourProgram.dir/src/score.c.obj
+C:/git\ hub\ data/data/game_project003/YourProgram.exe: CMakeFiles/YourProgram.dir/src/spawnneweneimes.c.obj
 C:/git\ hub\ data/data/game_project003/YourProgram.exe: CMakeFiles/YourProgram.dir/src/updating.c.obj
 C:/git\ hub\ data/data/game_project003/YourProgram.exe: CMakeFiles/YourProgram.dir/src/weapon.c.obj
 C:/git\ hub\ data/data/game_project003/YourProgram.exe: CMakeFiles/YourProgram.dir/build.make
@@ -239,7 +256,7 @@ C:/git\ hub\ data/data/game_project003/YourProgram.exe: D:/AllegroLib_5.2.8/lib/
 C:/git\ hub\ data/data/game_project003/YourProgram.exe: CMakeFiles/YourProgram.dir/linkLibs.rsp
 C:/git\ hub\ data/data/game_project003/YourProgram.exe: CMakeFiles/YourProgram.dir/objects1.rsp
 C:/git\ hub\ data/data/game_project003/YourProgram.exe: CMakeFiles/YourProgram.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\git hub data\data\game_project003\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Linking C executable \"C:\git hub data\data\game_project003\YourProgram.exe\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\git hub data\data\game_project003\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Linking C executable \"C:\git hub data\data\game_project003\YourProgram.exe\""
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\YourProgram.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

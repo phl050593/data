@@ -25,8 +25,8 @@ void menu_call() {
                 initialize_all(&game, &plane , 5);
                 game.Font = NULL;
                 game.Font = al_load_ttf_font("assets/arial.ttf", 16, 0);
-                Gamebackground_call(&game,&plane);
                 printf("Switching to game\n");
+                Gamebackground_call(&game,&plane);
                 cleanup(&game);
                 cleanup_enemies(&game);
                 cleanup_plane(&plane);
@@ -49,6 +49,7 @@ void menu_call() {
 
 
 void Gamebackground_call(game_data* game, plane_data* plane) {
+    player_data *playersPtr = game->players;
     al_play_sample_instance(game->background_music_instance);
     printf("gamebackground call\n");
     int isPaused = 0;
@@ -57,12 +58,37 @@ void Gamebackground_call(game_data* game, plane_data* plane) {
         if (!isPaused) {
             update_enemy_positions(game, plane);
             draw_game(game, plane);
-        if (game->players[PLAYER_1].score < 320)
+        if (game->players[PLAYER_1].score < 680)
             fire_plane_bullet(plane);
 
-        if (game->players[PLAYER_1].score >= 320)
+        if (game->players[PLAYER_1].score >= 680)
             fire_plane_bullet2(plane);
                 
+        }
+        
+        if(playersPtr[PLAYER_1].score<200)
+        {
+       
+            drawlevel(game,3);
+
+        }
+        if(playersPtr[PLAYER_1].score>200&&playersPtr[PLAYER_1].score<440)
+        {
+       
+            drawlevel(game,4);
+
+        }
+        if(playersPtr[PLAYER_1].score>440&&playersPtr[PLAYER_1].score<680)
+        {
+       
+            drawlevel(game,5);
+
+        }
+        if(playersPtr[PLAYER_1].score>680)
+        {
+       
+            drawlevel(game,6);
+
         }
 
 

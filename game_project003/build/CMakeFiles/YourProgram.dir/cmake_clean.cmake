@@ -17,6 +17,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/YourProgram.dir/src/main.c.obj.d"
   "CMakeFiles/YourProgram.dir/src/score.c.obj"
   "CMakeFiles/YourProgram.dir/src/score.c.obj.d"
+  "CMakeFiles/YourProgram.dir/src/spawnneweneimes.c.obj"
+  "CMakeFiles/YourProgram.dir/src/spawnneweneimes.c.obj.d"
   "CMakeFiles/YourProgram.dir/src/updating.c.obj"
   "CMakeFiles/YourProgram.dir/src/updating.c.obj.d"
   "CMakeFiles/YourProgram.dir/src/weapon.c.obj"
