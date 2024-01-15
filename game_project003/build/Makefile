@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\git hub data\game_project003"
+CMAKE_SOURCE_DIR = "C:\git hub data\data\game_project003"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\git hub data\game_project003\build"
+CMAKE_BINARY_DIR = "C:\git hub data\data\game_project003\build"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\git hub data\game_project003\build\CMakeFiles" "C:\git hub data\game_project003\build\\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\git hub data\data\game_project003\build\CMakeFiles" "C:\git hub data\data\game_project003\build\\CMakeFiles\progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\git hub data\game_project003\build\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\git hub data\data\game_project003\build\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -272,6 +272,30 @@ src/score.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/score.c.s
 .PHONY : src/score.c.s
 
+src/score_save.obj: src/score_save.c.obj
+.PHONY : src/score_save.obj
+
+# target to build an object file
+src/score_save.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/score_save.c.obj
+.PHONY : src/score_save.c.obj
+
+src/score_save.i: src/score_save.c.i
+.PHONY : src/score_save.i
+
+# target to preprocess a source file
+src/score_save.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/score_save.c.i
+.PHONY : src/score_save.c.i
+
+src/score_save.s: src/score_save.c.s
+.PHONY : src/score_save.s
+
+# target to generate assembly for a file
+src/score_save.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\YourProgram.dir\build.make CMakeFiles/YourProgram.dir/src/score_save.c.s
+.PHONY : src/score_save.c.s
+
 src/spawnneweneimes.obj: src/spawnneweneimes.c.obj
 .PHONY : src/spawnneweneimes.obj
 
@@ -347,6 +371,9 @@ help:
 	@echo ... src/score.obj
 	@echo ... src/score.i
 	@echo ... src/score.s
+	@echo ... src/score_save.obj
+	@echo ... src/score_save.i
+	@echo ... src/score_save.s
 	@echo ... src/spawnneweneimes.obj
 	@echo ... src/spawnneweneimes.i
 	@echo ... src/spawnneweneimes.s

@@ -84,7 +84,7 @@ void draw_plane(game_data* game, plane_data* plane) {
 }
 
 // Function to draw the main menu
-void drawMenu(menu* button) {
+void drawMenu(menu* button,int scorevalue) {
     al_clear_to_color(al_map_rgb(0, 0, 0));
 
     // Draw menu background
@@ -121,6 +121,12 @@ void drawMenu(menu* button) {
     float nameX = (SCREEN_W - nameWidth) / 2.0;
     float nameY = (SCREEN_H - nameHeight) / 2.0 - 250;
     al_draw_bitmap(button->nameImage, nameX, nameY, 0);
+
+
+    char ScoreText[20];
+    snprintf(ScoreText, sizeof(ScoreText), "%d", scorevalue);
+    al_draw_text(button->history_Font, al_map_rgb(240, 240, 240), SCREEN_W / 2 - 300, SCREEN_H / 2 - 400 , ALLEGRO_ALIGN_LEFT, ScoreText);
+    
 
     al_flip_display(); 
 }

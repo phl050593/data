@@ -1,7 +1,7 @@
 #include "myheader.h"
 
 // Function to handle the menu and game initialization
-void menu_call() {
+void menu_call(int scorevalue) {
     game_data game;
     plane_data plane;
     menu button;
@@ -14,12 +14,16 @@ void menu_call() {
     if (initializeButton(&button,display) != 0) {
         fprintf(stderr, "Initialization failed!\n");
         return;
-    }
+    }    
+
+
+   
+    
 
     // Main loop for the menu
     while (1) {
-        drawMenu(&button);
-
+        drawMenu(&button,scorevalue);
+        
         ALLEGRO_EVENT ev;
 
         // Check for events in the menu event queue
@@ -32,9 +36,9 @@ void menu_call() {
                 cleanupMenu(&button);
                 initialize_all(&game, &plane, 5,display);
                 game.Font = NULL;
-                game.Font = al_load_ttf_font("assets/arial.ttf", 16, 0);
+                game.Font = al_load_ttf_font("arial.ttf", 16, 0);
                 printf("Switching to game\n");
-                Gamebackground_call(&game, &plane,display);
+                Gamebackground_call(&game, &plane,display,scorevalue);
                 cleanup(&game);
                 cleanup_enemies(&game);
                 cleanup_plane(&plane);
@@ -55,8 +59,9 @@ void menu_call() {
 }
 
 // Function to handle the game background and player interactions
-void Gamebackground_call(game_data* game, plane_data* plane,ALLEGRO_DISPLAY* display) {
+void Gamebackground_call(game_data* game, plane_data* plane,ALLEGRO_DISPLAY* display,int scorevalue) {
     player_data *playersPtr = game->players;
+    initPlayers(playersPtr,1);
     al_play_sample_instance(game->background_music_instance);
     printf("gamebackground call\n");
     int isPaused = 0;
@@ -65,7 +70,7 @@ void Gamebackground_call(game_data* game, plane_data* plane,ALLEGRO_DISPLAY* dis
     // Main loop for the game background
     while (1) {
         if (!isPaused) {
-            update_enemy_positions(game, plane,display);
+            update_enemy_positions(game, plane,display,scorevalue);
             draw_game(game, plane);
 
             // Fire different bullets based on the player's score

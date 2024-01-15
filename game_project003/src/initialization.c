@@ -35,13 +35,17 @@ int initializeButton(menu* button,ALLEGRO_DISPLAY* display) {
     al_init_font_addon();
     al_init_ttf_addon();
 
+
     if (!al_init() || !al_init_image_addon()) {
         fprintf(stderr, "Failed to initialize Allegro!\n");
         return -1;
     }
+    
 
     button->display = display;
     button->menuBackgroundImage = al_load_bitmap("./starry_sky1.jpg");
+    button->history_Font = NULL;
+    button->history_Font = al_load_ttf_font("arial.ttf", 20, 0);
 
     if (!button->display || !button->menuBackgroundImage) {
         fprintf(stderr, "Failed to initialize or load resources!\n");
@@ -96,13 +100,13 @@ int initialize_game(game_data* game, int num_enemies,ALLEGRO_DISPLAY* display) {
     game->win_image = al_load_bitmap("./win.png");
     game->lose_image = al_load_bitmap("./lose.png");
     game->level1_Font = NULL;
-    game->level1_Font = al_load_ttf_font("assets/arial.ttf", 20, 0);
+    game->level1_Font = al_load_ttf_font("arial.ttf", 20, 0);
     game->level2_Font = NULL;
-    game->level2_Font = al_load_ttf_font("assets/arial.ttf", 20, 0);
+    game->level2_Font = al_load_ttf_font("arial.ttf", 20, 0);
     game->level3_Font = NULL;
-    game->level3_Font = al_load_ttf_font("assets/arial.ttf", 20, 0);
+    game->level3_Font = al_load_ttf_font("arial.ttf", 20, 0);
     game->level4_Font = NULL;
-    game->level4_Font = al_load_ttf_font("assets/arial.ttf", 20, 0);
+    game->level4_Font = al_load_ttf_font("arial.ttf", 20, 0);
 
     // Check if display and background loaded successfully
     if (!game->display || !game->background) {
@@ -268,3 +272,11 @@ void handleInput(ALLEGRO_EVENT *ev, menu *button, game_data *game) {
     }
 }
 
+void initPlayers(player_data *players, int nPlayer)
+{
+    int i = 0;
+    for (i = 0; i < nPlayer; ++i)
+    {
+        players[i].score = 0;
+    }
+}

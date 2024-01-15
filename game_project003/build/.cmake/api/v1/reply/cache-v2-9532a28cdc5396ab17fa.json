@@ -151,7 +151,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/git hub data/game_project003/build"
+			"value" : "c:/git hub data/data/game_project003/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -715,7 +715,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/git hub data/game_project003/build/CMakeFiles/pkgRedirects"
+			"value" : "C:/git hub data/data/game_project003/build/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -787,7 +787,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/git hub data/game_project003"
+			"value" : "C:/git hub data/data/game_project003"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1423,7 +1423,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/git hub data/game_project003/build"
+			"value" : "C:/git hub data/data/game_project003/build"
 		},
 		{
 			"name" : "YourAllegroProject_IS_TOP_LEVEL",
@@ -1447,7 +1447,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/git hub data/game_project003"
+			"value" : "C:/git hub data/data/game_project003"
 		},
 		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",

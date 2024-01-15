@@ -1,15 +1,5 @@
 #include "myheader.h"
 
-// Function to initialize player scores
-void initPlayers(player_data *players, int nPlayer)
-{
-    int i = 0;
-    for (i = 0; i < nPlayer; ++i)
-    {
-        players[i].score = 0;
-    }
-}
-
 // Function to check collision between two rectangles
 int check_collision(float x1, float y1, int w1, int h1, float x2, float y2, int w2, int h2)
 {
@@ -20,7 +10,7 @@ int check_collision(float x1, float y1, int w1, int h1, float x2, float y2, int 
 }
 
 // Function to check and handle collisions between bullets and enemies/planes
-void check_and_remove_bullet_collision(game_data *game, plane_data *plane,ALLEGRO_DISPLAY* display)
+void check_and_remove_bullet_collision(game_data *game, plane_data *plane,ALLEGRO_DISPLAY* display,int scorevalue)
 {
     player_data *playersPtr = game->players;
 
@@ -143,9 +133,13 @@ void check_and_remove_bullet_collision(game_data *game, plane_data *plane,ALLEGR
 
     // Check for victory or defeat conditions
     if (game->num_enemies == 0)
-    {
+    {   
         printf("You WIN\n");
+        
+        scorevalue = playersPtr[PLAYER_1].score;
+       
         drawlevel(game, 1);
+        ScoreFileSave (scorevalue);
         cleanup(game);
         cleanup_enemies(game);
         cleanup_plane(plane);
@@ -155,7 +149,12 @@ void check_and_remove_bullet_collision(game_data *game, plane_data *plane,ALLEGR
     if (plane->health <= 0)
     {
         printf("You LOSE\n");
+        
+        scorevalue = playersPtr[PLAYER_1].score;
+        
+        
         drawlevel(game, 2);
+        ScoreFileSave (scorevalue);
         cleanup(game);
         cleanup_enemies(game);
         cleanup_plane(plane);

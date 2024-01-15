@@ -35,7 +35,8 @@
 
 // Player-related constants
 #define PLAYER_1 0
-#define N_PLAYER 4 
+#define N_PLAYER 1 
+
 
 // Structure to hold player information
 typedef struct player_data {
@@ -144,6 +145,7 @@ typedef struct menu {
     ALLEGRO_BITMAP* menuBackgroundImage;
     ALLEGRO_BITMAP* illustrateImage;
     ALLEGRO_BITMAP* nameImage;
+    ALLEGRO_FONT* history_Font;
     float nameX;
     float nameY;
     float illustrateX;
@@ -162,7 +164,7 @@ typedef struct menu {
 
 // Function declarations
 void initPlayers(player_data *players, int nPlayer);
-void Gamebackground_call(game_data* game, plane_data* plane,ALLEGRO_DISPLAY* display);
+void Gamebackground_call(game_data* game, plane_data* plane,ALLEGRO_DISPLAY* display,int scorevalue);
 void draw_enemies(game_data* game);
 void draw_game(game_data* game, plane_data* plane);
 void draw_background(game_data* game);
@@ -171,7 +173,7 @@ void drawlevel(game_data*game, int picture_number);
 void cleanup(game_data *game);
 void cleanup_enemies(game_data* game);
 void cleanup_plane(plane_data*plane);
-void update_enemy_positions(game_data* game, plane_data* plane,ALLEGRO_DISPLAY* display);
+void update_enemy_positions(game_data* game, plane_data* plane,ALLEGRO_DISPLAY* display,int scorevalue);
 void fire_bullet(enemy_data* enemy);
 void fire_plane_bullet(plane_data* plane);
 void fire_plane_bullet2(plane_data *plane);
@@ -183,16 +185,19 @@ void initialize_plane_bullet(plane_data *plane, int index);
 void initialize_plane_bullet2(plane_data *plane, int index);
 int initialize_plane(plane_data* plane);
 int initializeButton(menu* button,ALLEGRO_DISPLAY* display);
-void drawMenu(menu* button);
+void drawMenu(menu* button,int scorevalue);
 void cleanupMenu(menu* button);
 void handleInput(ALLEGRO_EVENT *ev, menu *button, game_data *game);
-void menu_call();
+void menu_call(int scorevalue);
 void movePlane(plane_data* plane, const ALLEGRO_KEYBOARD_EVENT* kbEvent);
 int check_collision(float x1, float y1, int w1, int h1, float x2, float y2, int w2, int h2);
-void check_and_remove_bullet_collision(game_data* game, plane_data* plane,ALLEGRO_DISPLAY* display);
+void check_and_remove_bullet_collision(game_data* game, plane_data* plane,ALLEGRO_DISPLAY* display,int scorevalue);
 int check_collision_with_existing(game_data* game, enemy_data* new_enemy);
 void spawn_new_enemies(game_data* game);
 void spawn_new_enemies2(game_data* game);
 void spawn_new_enemies3(game_data* game);
+
+void ScoreFileLoad (int* Score);
+void ScoreFileSave (int Score);
 
 #endif // _MYHEADER_H_
